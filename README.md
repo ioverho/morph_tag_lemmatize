@@ -49,8 +49,7 @@ Ultimately, this UDPipe2 was 1 of 3 winners at CONLL 2018's shared task, and 1 o
 
 Relative to other models in this repository, the backward step is small. This results in relatively fast training, even for the largest datasets. Due to the emphasis on combining pre-trained word/context-embeddings, performance is strong almost out-of-the-box.
 
-For more information, see the [dedicated website](https://ufal.mff.cuni.cz/udpipe/2), the [Github repository](https://github.com/ufal/udpipe/tree/udpipe-2), or any of the published system's papers[^UDPipe2 CONLL][^UDPipe2 SIGMORPHON][^UDPipe2 EvaLatin].
-
+For more information, see the [dedicated website](https://ufal.mff.cuni.cz/udpipe/2), the [Github repository](https://github.com/ufal/udpipe/tree/udpipe-2), or any of the published system papers <sup>[1](#udpipe2conll)</sup> <sup>[1](#UDPipe2SIGMORPHON)</sup> <sup>[1](#UDPipe2EvaLatin)</sup>.
 
 ### Differences
 1. **Morph. tag factoring**: due to some morphological tags not being present in the initial UniMorph schema, and lack of detail regarding implementation, regularisation was not conducted via factoring the tags into their classes. Rather, the model was further tasked with seperately predicting presence of a cateogry
@@ -213,8 +212,8 @@ The eval files will be stored in `./eval`. These can be read and analyzed in the
 
 # References
 
-[^UDPipe2 CONLL]: Straka, M. (2018, October). UDPipe 2.0 prototype at CoNLL 2018 UD shared task. In Proceedings of the CoNLL 2018 Shared Task: Multilingual Parsing from Raw Text to Universal Dependencies (pp. 197-207).
+<a name="udpipe2conll">1</a>: Straka, M. (2018, October). UDPipe 2.0 prototype at CoNLL 2018 UD shared task. In Proceedings of the CoNLL 2018 Shared Task: Multilingual Parsing from Raw Text to Universal Dependencies (pp. 197-207).
 
-[^UDPipe2 SIGMORPHON]: Straka, M., Straková, J., & Hajič, J. (2019). UDPipe at SIGMORPHON 2019: Contextualized embeddings, regularization with morphological categories, corpora merging. arXiv preprint arXiv:1908.06931.
+<a name="UDPipe2SIGMORPHON">1</a>: Straka, M., Straková, J., & Hajič, J. (2019). UDPipe at SIGMORPHON 2019: Contextualized embeddings, regularization with morphological categories, corpora merging. arXiv preprint arXiv:1908.06931.
 
-[^UDPipe2 EvaLatin]: Straka, M., & Straková, J. (2020). UDPipe at EvaLatin 2020: Contextualized embeddings and treebank embeddings. arXiv preprint arXiv:2006.03687.
+<a name="UDPipe2EvaLatin">1</a>: Straka, M., & Straková, J. (2020). UDPipe at EvaLatin 2020: Contextualized embeddings and treebank embeddings. arXiv preprint arXiv:2006.03687.
