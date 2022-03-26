@@ -117,10 +117,8 @@ dmypy.json
 klad.py
 klad*.*
 */data/*/
-/misc
 .*cache
 */checkpoints/*
-/msc_thesis
 *.tmp
 *.pt
 klad.py
