@@ -1,0 +1,3204 @@
+Abaza_ATB:
+  language: Abaza
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 33
+    tokens: 187
+    words: 187
+  source_genres:
+  - spoken
+Afrikaans_AfriBooms:
+  language: Afrikaans
+  license: CC BY-SA 4.0
+  quality: 0.651374
+  size:
+    sentences: 1934
+    tokens: 49260
+    words: 49260
+  source_genres:
+  - legal
+  - nonfiction
+Akkadian_PISANDUB:
+  language: Akkadian
+  license: CC BY-SA 4.0
+  quality: 0.223639
+  size:
+    sentences: 101
+    tokens: 1852
+    words: 1852
+  source_genres:
+  - news
+Akkadian_RIAO:
+  language: Akkadian
+  license: CC BY-SA 3.0
+  quality: 0.326362
+  size:
+    sentences: 1874
+    tokens: 20507
+    words: 23155
+  source_genres:
+  - government
+  - nonfiction
+Akuntsu_TuDeT:
+  language: Akuntsu
+  license: CC BY-SA 4.0
+  quality: 0.183607
+  size:
+    sentences: 101
+    tokens: 405
+    words: 408
+  source_genres:
+  - news
+  - nonfiction
+Albanian_TSA:
+  language: Albanian
+  license: CC BY-SA 4.0
+  quality: 0.283521
+  size:
+    sentences: 60
+    tokens: 922
+    words: 922
+  source_genres:
+  - wiki
+Amharic_ATT:
+  language: Amharic
+  license: CC BY-SA 4.0
+  quality: 0.00361
+  size:
+    sentences: 1074
+    tokens: 5245
+    words: 10010
+  source_genres:
+  - bible
+  - fiction
+  - grammar-examples
+  - news
+  - nonfiction
+Amharic_Inku:
+  language: Amharic
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 0
+    tokens: 0
+    words: 0
+  source_genres:
+  - news
+  - nonfiction
+Ancient_Greek_PROIEL:
+  language: Ancient_Greek
+  license: CC BY-NC-SA 3.0
+  quality: 0.007118
+  size:
+    sentences: 17080
+    tokens: 213999
+    words: 213999
+  source_genres:
+  - bible
+  - nonfiction
+Ancient_Greek_PTNK:
+  language: Ancient_Greek
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 0
+    tokens: 0
+    words: 0
+  source_genres:
+  - bible
+Ancient_Greek_Perseus:
+  language: Ancient_Greek
+  license: CC BY-NC-SA 2.5
+  quality: 0.004714
+  size:
+    sentences: 13919
+    tokens: 202989
+    words: 202989
+  source_genres:
+  - fiction
+Ancient_Hebrew_PTNK:
+  language: Ancient_Hebrew
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 0
+    tokens: 0
+    words: 0
+  source_genres:
+  - bible
+Apurina_UFPA:
+  language: Apurina
+  license: CC BY-SA 4.0
+  quality: 0.195836
+  size:
+    sentences: 107
+    tokens: 728
+    words: 731
+  source_genres:
+  - news
+  - nonfiction
+Arabic_NYUAD:
+  language: Arabic
+  license: CC BY-SA 4.0
+  quality: 0.000464
+  size:
+    sentences: 19738
+    tokens: 629295
+    words: 738889
+  source_genres:
+  - news
+Arabic_PADT:
+  language: Arabic
+  license: CC BY-NC-SA 3.0
+  quality: 0.563441
+  size:
+    sentences: 7664
+    tokens: 242132
+    words: 282460
+  source_genres:
+  - news
+Arabic_PUD:
+  language: Arabic
+  license: CC BY-SA 3.0
+  quality: 0.003489
+  size:
+    sentences: 1000
+    tokens: 20751
+    words: 20751
+  source_genres:
+  - news
+  - wiki
+Archaic_Irish_OGAM:
+  language: Archaic_Irish
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 0
+    tokens: 0
+    words: 0
+  source_genres:
+  - news
+  - nonfiction
+Armenian_ArmTDP:
+  language: Armenian
+  license: CC BY-SA 4.0
+  quality: 0.797489
+  size:
+    sentences: 2502
+    tokens: 52265
+    words: 52630
+  source_genres:
+  - blog
+  - fiction
+  - grammar-examples
+  - legal
+  - news
+  - nonfiction
+Armenian_BSUT:
+  language: Armenian
+  license: CC BY-SA 4.0
+  quality: 0.649503
+  size:
+    sentences: 124
+    tokens: 3166
+    words: 3184
+  source_genres:
+  - fiction
+  - legal
+  - news
+  - nonfiction
+Assamese_AsTB:
+  language: Assamese
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 0
+    tokens: 0
+    words: 0
+  source_genres:
+  - news
+  - nonfiction
+Assyrian_AS:
+  language: Assyrian
+  license: CC BY-SA 4.0
+  quality: 0.221029
+  size:
+    sentences: 57
+    tokens: 453
+    words: 453
+  source_genres:
+  - news
+  - nonfiction
+Bambara_CRB:
+  language: Bambara
+  license: CC BY-SA 4.0
+  quality: 0.003165
+  size:
+    sentences: 1026
+    tokens: 13823
+    words: 13823
+  source_genres:
+  - news
+  - nonfiction
+Basque_BDT:
+  language: Basque
+  license: CC BY-NC-SA 3.0
+  quality: 0.004372
+  size:
+    sentences: 8993
+    tokens: 121443
+    words: 121443
+  source_genres:
+  - news
+Beja_NSC:
+  language: Beja
+  license: CC BY-SA 4.0
+  quality: 0.180145
+  size:
+    sentences: 56
+    tokens: 1101
+    words: 1101
+  source_genres:
+  - spoken
+Belarusian_HSE:
+  language: Belarusian
+  license: CC BY-SA 4.0
+  quality: 0.884242
+  size:
+    sentences: 25231
+    tokens: 305406
+    words: 305406
+  source_genres:
+  - fiction
+  - legal
+  - news
+  - nonfiction
+  - poetry
+  - social
+  - wiki
+Bengali_BRU:
+  language: Bengali
+  license: CC BY-SA 4.0
+  quality: 0.558511
+  size:
+    sentences: 56
+    tokens: 320
+    words: 320
+  source_genres:
+  - grammar-examples
+Bengali_PUD:
+  language: Bengali
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 0
+    tokens: 0
+    words: 0
+  source_genres:
+  - news
+  - wiki
+Bhojpuri_BHTB:
+  language: Bhojpuri
+  license: CC BY-SA 4.0
+  quality: 0.343879
+  size:
+    sentences: 357
+    tokens: 6665
+    words: 6665
+  source_genres:
+  - news
+  - nonfiction
+Bhojpuri_BhEn:
+  language: Bhojpuri
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 0
+    tokens: 0
+    words: 0
+  source_genres:
+  - news
+  - nonfiction
+Breton_KEB:
+  language: Breton
+  license: CC BY-SA 4.0
+  quality: 0.355785
+  size:
+    sentences: 888
+    tokens: 9760
+    words: 10054
+  source_genres:
+  - fiction
+  - grammar-examples
+  - news
+  - nonfiction
+  - poetry
+  - wiki
+Bulgarian_BTB:
+  language: Bulgarian
+  license: CC BY-NC-SA 3.0
+  quality: 0.791443
+  size:
+    sentences: 11138
+    tokens: 156149
+    words: 156149
+  source_genres:
+  - fiction
+  - legal
+  - news
+Buryat_BDT:
+  language: Buryat
+  license: CC BY-SA 4.0
+  quality: 0.004655
+  size:
+    sentences: 927
+    tokens: 10185
+    words: 10185
+  source_genres:
+  - fiction
+  - grammar-examples
+  - news
+Cantonese_HK:
+  language: Cantonese
+  license: CC BY-SA 4.0
+  quality: 0.002789
+  size:
+    sentences: 1004
+    tokens: 13918
+    words: 13918
+  source_genres:
+  - spoken
+Cappadocian_AMGiC:
+  language: Cappadocian
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 0
+    tokens: 0
+    words: 0
+  source_genres:
+  - news
+  - nonfiction
+Catalan_AnCora:
+  language: Catalan
+  license: CC BY 4.0
+  quality: 0.798157
+  size:
+    sentences: 16678
+    tokens: 537171
+    words: 553042
+  source_genres:
+  - news
+Cebuano_GJA:
+  language: Cebuano
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 0
+    tokens: 0
+    words: 0
+  source_genres:
+  - grammar-examples
+Chinese_CFL:
+  language: Chinese
+  license: CC BY-SA 4.0
+  quality: 0.002476
+  size:
+    sentences: 451
+    tokens: 7256
+    words: 7256
+  source_genres:
+  - learner-essays
+Chinese_GSD:
+  language: Chinese
+  license: CC BY-SA 4.0
+  quality: 0.003874
+  size:
+    sentences: 4997
+    tokens: 123291
+    words: 123291
+  source_genres:
+  - wiki
+Chinese_GSDSimp:
+  language: Chinese
+  license: CC BY-SA 4.0
+  quality: 0.00425
+  size:
+    sentences: 4997
+    tokens: 123291
+    words: 123291
+  source_genres:
+  - wiki
+Chinese_HK:
+  language: Chinese
+  license: CC BY-SA 4.0
+  quality: 0.002538
+  size:
+    sentences: 1004
+    tokens: 9874
+    words: 9874
+  source_genres:
+  - spoken
+Chinese_PUD:
+  language: Chinese
+  license: CC BY-SA 3.0
+  quality: 0.002701
+  size:
+    sentences: 1000
+    tokens: 21415
+    words: 21415
+  source_genres:
+  - news
+  - wiki
+Chukchi_HSE:
+  language: Chukchi
+  license: CC BY-SA 4.0
+  quality: 0.20237
+  size:
+    sentences: 1004
+    tokens: 5472
+    words: 6207
+  source_genres:
+  - spoken
+Classical_Chinese_Kyoto:
+  language: Classical_Chinese
+  license: PD
+  quality: 0.4963
+  size:
+    sentences: 58301
+    tokens: 283166
+    words: 283166
+  source_genres:
+  - nonfiction
+  - poetry
+Coptic_Scriptorium:
+  language: Coptic
+  license: CC BY 4.0
+  quality: 0.445319
+  size:
+    sentences: 2010
+    tokens: 24647
+    words: 52169
+  source_genres:
+  - bible
+  - fiction
+  - nonfiction
+Croatian_SET:
+  language: Croatian
+  license: CC BY-SA 4.0
+  quality: 0.805847
+  size:
+    sentences: 9010
+    tokens: 199409
+    words: 199409
+  source_genres:
+  - news
+  - web
+  - wiki
+Cusco_Quechua_Squoia:
+  language: Cusco_Quechua
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 0
+    tokens: 0
+    words: 0
+  source_genres:
+  - news
+  - nonfiction
+Czech_CAC:
+  language: Czech
+  license: CC BY-SA 4.0
+  quality: 0.838075
+  size:
+    sentences: 24709
+    tokens: 494420
+    words: 495497
+  source_genres:
+  - legal
+  - medical
+  - news
+  - nonfiction
+  - reviews
+Czech_CLTT:
+  language: Czech
+  license: CC BY-SA 4.0
+  quality: 0.683531
+  size:
+    sentences: 1125
+    tokens: 36673
+    words: 36689
+  source_genres:
+  - legal
+Czech_FicTree:
+  language: Czech
+  license: CC BY-NC-SA 4.0
+  quality: 0.781738
+  size:
+    sentences: 12760
+    tokens: 166747
+    words: 167371
+  source_genres:
+  - fiction
+Czech_PCEDT:
+  language: Czech
+  license: CC BY-NC-SA 3.0
+  quality: 0.0
+  size:
+    sentences: 49208
+    tokens: 1197447
+    words: 1200913
+  source_genres:
+  - news
+  - nonfiction
+  - reviews
+Czech_PDT:
+  language: Czech
+  license: CC BY-NC-SA 3.0
+  quality: 0.862359
+  size:
+    sentences: 87913
+    tokens: 1506300
+    words: 1509052
+  source_genres:
+  - news
+  - nonfiction
+  - reviews
+Czech_PUD:
+  language: Czech
+  license: CC BY-SA 4.0
+  quality: 0.679568
+  size:
+    sentences: 1000
+    tokens: 18578
+    words: 18623
+  source_genres:
+  - news
+  - wiki
+Danish_DDT:
+  language: Danish
+  license: CC BY-SA 4.0
+  quality: 0.007188
+  size:
+    sentences: 5512
+    tokens: 100733
+    words: 100733
+  source_genres:
+  - fiction
+  - news
+  - nonfiction
+  - spoken
+Danish_DTB:
+  language: Danish
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 0
+    tokens: 0
+    words: 0
+  source_genres:
+  - news
+  - nonfiction
+Dargwa_Mehweb:
+  language: Dargwa
+  license: CC BY-NC-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 0
+    tokens: 0
+    words: 0
+  source_genres:
+  - spoken
+Dutch_Alpino:
+  language: Dutch
+  license: CC BY-SA 4.0
+  quality: 0.486346
+  size:
+    sentences: 13603
+    tokens: 208747
+    words: 208747
+  source_genres:
+  - news
+Dutch_LassySmall:
+  language: Dutch
+  license: CC BY-SA 4.0
+  quality: 0.458343
+  size:
+    sentences: 7341
+    tokens: 98242
+    words: 98242
+  source_genres:
+  - wiki
+English_Atis:
+  language: English
+  license: CC BY-SA 4.0
+  quality: 0.75737
+  size:
+    sentences: 5432
+    tokens: 61879
+    words: 61879
+  source_genres:
+  - news
+  - nonfiction
+English_BhEn:
+  language: English
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 0
+    tokens: 0
+    words: 0
+  source_genres:
+  - news
+  - nonfiction
+English_CTeTex:
+  language: English
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 0
+    tokens: 0
+    words: 0
+  source_genres:
+  - nonfiction
+English_ESL:
+  language: English
+  license: CC BY-SA 4.0
+  quality: 0.000355
+  size:
+    sentences: 5124
+    tokens: 97681
+    words: 97681
+  source_genres:
+  - learner-essays
+English_EWT:
+  language: English
+  license: CC BY-SA 4.0
+  quality: 0.702749
+  size:
+    sentences: 16621
+    tokens: 251528
+    words: 254864
+  source_genres:
+  - blog
+  - email
+  - reviews
+  - social
+  - web
+English_GUM:
+  language: English
+  license: CC BY-NC-SA 4.0
+  quality: 0.793282
+  size:
+    sentences: 7397
+    tokens: 134299
+    words: 135952
+  source_genres:
+  - academic
+  - blog
+  - fiction
+  - government
+  - news
+  - nonfiction
+  - social
+  - spoken
+  - web
+  - wiki
+English_GUMReddit:
+  language: English
+  license: CC BY 4.0
+  quality: 0.053067
+  size:
+    sentences: 895
+    tokens: 15993
+    words: 16356
+  source_genres:
+  - blog
+  - social
+English_LinES:
+  language: English
+  license: CC BY-NC-SA 4.0
+  quality: 0.589858
+  size:
+    sentences: 5243
+    tokens: 94217
+    words: 94217
+  source_genres:
+  - fiction
+  - nonfiction
+  - spoken
+English_PCEDT:
+  language: English
+  license: CC BY-NC-SA 3.0
+  quality: 0.0
+  size:
+    sentences: 49208
+    tokens: 1210506
+    words: 1210506
+  source_genres:
+  - news
+  - nonfiction
+  - reviews
+English_PUD:
+  language: English
+  license: CC BY-SA 3.0
+  quality: 0.612664
+  size:
+    sentences: 1000
+    tokens: 21183
+    words: 21183
+  source_genres:
+  - news
+  - wiki
+English_ParTUT:
+  language: English
+  license: CC BY-NC-SA 4.0
+  quality: 0.750922
+  size:
+    sentences: 2090
+    tokens: 49602
+    words: 49634
+  source_genres:
+  - legal
+  - news
+  - wiki
+English_Pronouns:
+  language: English
+  license: CC BY-SA 4.0
+  quality: 0.540962
+  size:
+    sentences: 285
+    tokens: 1705
+    words: 1705
+  source_genres:
+  - grammar-examples
+Erzya_JR:
+  language: Erzya
+  license: CC BY-SA 4.0
+  quality: 0.380433
+  size:
+    sentences: 1704
+    tokens: 17213
+    words: 17289
+  source_genres:
+  - fiction
+Estonian_EDT:
+  language: Estonian
+  license: CC BY-NC-SA 4.0
+  quality: 0.837039
+  size:
+    sentences: 30972
+    tokens: 438175
+    words: 438175
+  source_genres:
+  - academic
+  - fiction
+  - news
+  - nonfiction
+Estonian_EWT:
+  language: Estonian
+  license: CC BY-NC-SA 4.0
+  quality: 0.767576
+  size:
+    sentences: 5863
+    tokens: 72883
+    words: 72883
+  source_genres:
+  - blog
+  - social
+  - web
+Faroese_FarPaHC:
+  language: Faroese
+  license: CC BY-SA 4.0
+  quality: 0.341584
+  size:
+    sentences: 1621
+    tokens: 40471
+    words: 40484
+  source_genres:
+  - bible
+  - fiction
+  - nonfiction
+Faroese_OFT:
+  language: Faroese
+  license: CC BY-SA 4.0
+  quality: 0.003945
+  size:
+    sentences: 1208
+    tokens: 10002
+    words: 10002
+  source_genres:
+  - wiki
+Finnish_FTB:
+  language: Finnish
+  license: CC BY 4.0
+  quality: 0.007205
+  size:
+    sentences: 18723
+    tokens: 159314
+    words: 159612
+  source_genres:
+  - grammar-examples
+Finnish_OOD:
+  language: Finnish
+  license: CC BY-SA 4.0
+  quality: 0.537816
+  size:
+    sentences: 2122
+    tokens: 19363
+    words: 19382
+  source_genres:
+  - medical
+  - poetry
+  - social
+  - web
+Finnish_PUD:
+  language: Finnish
+  license: CC BY-SA 4.0
+  quality: 0.595303
+  size:
+    sentences: 1000
+    tokens: 15811
+    words: 15817
+  source_genres:
+  - news
+  - wiki
+Finnish_TDT:
+  language: Finnish
+  license: CC BY-SA 4.0
+  quality: 0.673804
+  size:
+    sentences: 15136
+    tokens: 202209
+    words: 202453
+  source_genres:
+  - blog
+  - fiction
+  - grammar-examples
+  - legal
+  - news
+  - wiki
+French_CrapBank:
+  language: French
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 0
+    tokens: 0
+    words: 0
+  source_genres:
+  - news
+  - nonfiction
+French_FQB:
+  language: French
+  license: LGPL-LR
+  quality: 0.532905
+  size:
+    sentences: 2289
+    tokens: 23349
+    words: 23901
+  source_genres:
+  - news
+  - nonfiction
+French_FTB:
+  language: French
+  license: LGPL-LR
+  quality: 0.000612
+  size:
+    sentences: 18535
+    tokens: 556064
+    words: 573370
+  source_genres:
+  - news
+French_GSD:
+  language: French
+  license: CC BY-SA 4.0
+  quality: 0.723978
+  size:
+    sentences: 16341
+    tokens: 389196
+    words: 400221
+  source_genres:
+  - blog
+  - news
+  - reviews
+  - wiki
+French_PUD:
+  language: French
+  license: CC BY-SA 3.0
+  quality: 0.572861
+  size:
+    sentences: 1000
+    tokens: 24131
+    words: 24726
+  source_genres:
+  - news
+  - wiki
+French_ParTUT:
+  language: French
+  license: CC BY-NC-SA 4.0
+  quality: 0.703583
+  size:
+    sentences: 1020
+    tokens: 27658
+    words: 28595
+  source_genres:
+  - legal
+  - news
+  - wiki
+French_ParisStories:
+  language: French
+  license: CC BY-SA 4.0
+  quality: 0.633399
+  size:
+    sentences: 1755
+    tokens: 29438
+    words: 29631
+  source_genres:
+  - spoken
+French_Sequoia:
+  language: French
+  license: LGPL-LR
+  quality: 0.62754
+  size:
+    sentences: 3099
+    tokens: 68596
+    words: 70548
+  source_genres:
+  - medical
+  - news
+  - nonfiction
+  - wiki
+French_Spoken:
+  language: French
+  license: CC BY-SA 4.0
+  quality: 0.679801
+  size:
+    sentences: 3210
+    tokens: 43700
+    words: 44243
+  source_genres:
+  - spoken
+Frisian_Dutch_Fame:
+  language: Frisian_Dutch
+  license: CC BY-SA 4.0
+  quality: 0.190096
+  size:
+    sentences: 400
+    tokens: 3729
+    words: 3729
+  source_genres:
+  - spoken
+Frisian_Frysk:
+  language: Frisian
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 3126
+    tokens: 51261
+    words: 51261
+  source_genres:
+  - academic
+  - fiction
+  - news
+  - nonfiction
+  - wiki
+Galician_CTG:
+  language: Galician
+  license: CC BY-NC-SA 3.0
+  quality: 0.004242
+  size:
+    sentences: 3993
+    tokens: 126011
+    words: 138837
+  source_genres:
+  - legal
+  - medical
+  - news
+  - nonfiction
+Galician_TreeGal:
+  language: Galician
+  license: LGPL-LR
+  quality: 0.744387
+  size:
+    sentences: 1000
+    tokens: 23479
+    words: 25548
+  source_genres:
+  - news
+Georgian_GNC:
+  language: Georgian
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 0
+    tokens: 0
+    words: 0
+  source_genres:
+  - news
+  - nonfiction
+German_GSD:
+  language: German
+  license: CC BY-SA 4.0
+  quality: 0.752577
+  size:
+    sentences: 15590
+    tokens: 287740
+    words: 292788
+  source_genres:
+  - news
+  - reviews
+  - wiki
+German_HDT:
+  language: German
+  license: CC BY-SA 4.0
+  quality: 0.850616
+  size:
+    sentences: 189928
+    tokens: 3399390
+    words: 3455580
+  source_genres:
+  - news
+  - nonfiction
+  - web
+German_LIT:
+  language: German
+  license: CC BY-NC-SA 4.0
+  quality: 0.325059
+  size:
+    sentences: 1922
+    tokens: 40335
+    words: 40440
+  source_genres:
+  - nonfiction
+German_PUD:
+  language: German
+  license: CC BY-SA 3.0
+  quality: 0.392756
+  size:
+    sentences: 1000
+    tokens: 21000
+    words: 21331
+  source_genres:
+  - news
+  - wiki
+Gothic_PROIEL:
+  language: Gothic
+  license: CC BY-NC-SA 3.0
+  quality: 0.005698
+  size:
+    sentences: 5401
+    tokens: 55336
+    words: 55336
+  source_genres:
+  - bible
+Greek_GDT:
+  language: Greek
+  license: CC BY-NC-SA 3.0
+  quality: 0.701227
+  size:
+    sentences: 2521
+    tokens: 61773
+    words: 63441
+  source_genres:
+  - news
+  - spoken
+  - wiki
+Guajajara_TuDeT:
+  language: Guajajara
+  license: CC BY-SA 4.0
+  quality: 0.249667
+  size:
+    sentences: 284
+    tokens: 2022
+    words: 2052
+  source_genres:
+  - news
+  - nonfiction
+Hebrew_HTB:
+  language: Hebrew
+  license: CC BY-NC-SA 4.0
+  quality: 0.005121
+  size:
+    sentences: 6216
+    tokens: 115529
+    words: 161411
+  source_genres:
+  - news
+Hiligaynon_HTB:
+  language: Hiligaynon
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 0
+    tokens: 0
+    words: 0
+  source_genres:
+  - grammar-examples
+Hindi_English_HIENCS:
+  language: Hindi_English
+  license: CC BY-SA 4.0
+  quality: 0.000277
+  size:
+    sentences: 1898
+    tokens: 26909
+    words: 26909
+  source_genres:
+  - social
+Hindi_HDTB:
+  language: Hindi
+  license: CC BY-NC-SA 4.0
+  quality: 0.007431
+  size:
+    sentences: 16647
+    tokens: 351704
+    words: 351704
+  source_genres:
+  - news
+Hindi_PUD:
+  language: Hindi
+  license: CC BY-SA 3.0
+  quality: 0.315723
+  size:
+    sentences: 1000
+    tokens: 23829
+    words: 23829
+  source_genres:
+  - news
+  - wiki
+Hittite_HitTB:
+  language: Hittite
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 136
+    tokens: 970
+    words: 1309
+  source_genres:
+  - grammar-examples
+Hungarian_Szeged:
+  language: Hungarian
+  license: CC BY-NC-SA 3.0
+  quality: 0.007501
+  size:
+    sentences: 1800
+    tokens: 42032
+    words: 42032
+  source_genres:
+  - news
+Icelandic_IcePaHC:
+  language: Icelandic
+  license: CC BY-SA 4.0
+  quality: 0.640125
+  size:
+    sentences: 44029
+    tokens: 983678
+    words: 985057
+  source_genres:
+  - bible
+  - fiction
+  - legal
+  - nonfiction
+Icelandic_Modern:
+  language: Icelandic
+  license: CC BY-SA 4.0
+  quality: 0.483918
+  size:
+    sentences: 6928
+    tokens: 158134
+    words: 158150
+  source_genres:
+  - news
+  - nonfiction
+Icelandic_PUD:
+  language: Icelandic
+  license: CC BY-SA 4.0
+  quality: 0.421593
+  size:
+    sentences: 1000
+    tokens: 18831
+    words: 18833
+  source_genres:
+  - news
+  - wiki
+Indonesian_CSUI:
+  language: Indonesian
+  license: CC BY-SA 4.0
+  quality: 0.681166
+  size:
+    sentences: 1030
+    tokens: 27771
+    words: 28263
+  source_genres:
+  - news
+  - nonfiction
+Indonesian_GSD:
+  language: Indonesian
+  license: CC BY-SA 4.0
+  quality: 0.731824
+  size:
+    sentences: 5598
+    tokens: 119832
+    words: 122021
+  source_genres:
+  - blog
+  - news
+Indonesian_PUD:
+  language: Indonesian
+  license: CC BY-SA 3.0
+  quality: 0.743711
+  size:
+    sentences: 1000
+    tokens: 19034
+    words: 19446
+  source_genres:
+  - news
+  - wiki
+Irish_IDT:
+  language: Irish
+  license: CC BY-SA 3.0
+  quality: 0.432273
+  size:
+    sentences: 4910
+    tokens: 115990
+    words: 115990
+  source_genres:
+  - fiction
+  - government
+  - legal
+  - news
+  - web
+Irish_TwittIrish:
+  language: Irish
+  license: CC BY-SA 4.0
+  quality: 0.272914
+  size:
+    sentences: 866
+    tokens: 15433
+    words: 15433
+  source_genres:
+  - social
+Italian_ISDT:
+  language: Italian
+  license: CC BY-NC-SA 3.0
+  quality: 0.824402
+  size:
+    sentences: 14167
+    tokens: 278466
+    words: 298380
+  source_genres:
+  - legal
+  - news
+  - wiki
+Italian_PUD:
+  language: Italian
+  license: CC BY-SA 3.0
+  quality: 0.35056
+  size:
+    sentences: 1000
+    tokens: 22182
+    words: 23731
+  source_genres:
+  - news
+  - wiki
+Italian_ParTUT:
+  language: Italian
+  license: CC BY-NC-SA 4.0
+  quality: 0.746862
+  size:
+    sentences: 2090
+    tokens: 51614
+    words: 55558
+  source_genres:
+  - legal
+  - news
+  - wiki
+Italian_PoSTWITA:
+  language: Italian
+  license: CC BY-NC-SA 4.0
+  quality: 0.667988
+  size:
+    sentences: 6712
+    tokens: 119342
+    words: 124523
+  source_genres:
+  - social
+Italian_TWITTIRO:
+  language: Italian
+  license: CC BY-SA 4.0
+  quality: 0.689422
+  size:
+    sentences: 1424
+    tokens: 28387
+    words: 29605
+  source_genres:
+  - social
+Italian_VIT:
+  language: Italian
+  license: CC BY-NC-SA 3.0
+  quality: 0.807278
+  size:
+    sentences: 10087
+    tokens: 259479
+    words: 279984
+  source_genres:
+  - news
+  - nonfiction
+Italian_Valico:
+  language: Italian
+  license: CC BY-SA 4.0
+  quality: 0.670485
+  size:
+    sentences: 398
+    tokens: 6508
+    words: 6784
+  source_genres:
+  - learner-essays
+Japanese_BCCWJ:
+  language: Japanese
+  license: CC BY-NC-SA 4.0
+  quality: 0.044818
+  size:
+    sentences: 57109
+    tokens: 1253903
+    words: 1253903
+  source_genres:
+  - blog
+  - fiction
+  - news
+  - nonfiction
+  - web
+Japanese_BCCWJLUW:
+  language: Japanese
+  license: CC BY-NC-SA 4.0
+  quality: 0.044635
+  size:
+    sentences: 57109
+    tokens: 995632
+    words: 995632
+  source_genres:
+  - blog
+  - fiction
+  - news
+  - nonfiction
+  - web
+Japanese_GSD:
+  language: Japanese
+  license: CC BY-SA 4.0
+  quality: 0.427486
+  size:
+    sentences: 8100
+    tokens: 193654
+    words: 193654
+  source_genres:
+  - blog
+  - news
+Japanese_GSDLUW:
+  language: Japanese
+  license: CC BY-SA 4.0
+  quality: 0.404765
+  size:
+    sentences: 8100
+    tokens: 150258
+    words: 150258
+  source_genres:
+  - blog
+  - news
+Japanese_KTC:
+  language: Japanese
+  license: CC BY-SA 4.0
+  quality: 0.000347
+  size:
+    sentences: 7158
+    tokens: 189943
+    words: 189943
+  source_genres:
+  - news
+Japanese_Modern:
+  language: Japanese
+  license: CC BY-NC-ND 3.0
+  quality: 0.002899
+  size:
+    sentences: 822
+    tokens: 14494
+    words: 14494
+  source_genres:
+  - nonfiction
+Japanese_PUD:
+  language: Japanese
+  license: CC BY-SA 3.0
+  quality: 0.324549
+  size:
+    sentences: 1000
+    tokens: 28788
+    words: 28788
+  source_genres:
+  - news
+  - wiki
+Japanese_PUDLUW:
+  language: Japanese
+  license: CC BY-SA 3.0
+  quality: 0.317735
+  size:
+    sentences: 1000
+    tokens: 22910
+    words: 22910
+  source_genres:
+  - news
+  - wiki
+Javanese_CSUI:
+  language: Javanese
+  license: CC BY-SA 4.0
+  quality: 0.342014
+  size:
+    sentences: 125
+    tokens: 2023
+    words: 2067
+  source_genres:
+  - news
+  - nonfiction
+Kaapor_TuDeT:
+  language: Kaapor
+  license: CC BY-SA 4.0
+  quality: 0.186933
+  size:
+    sentences: 83
+    tokens: 366
+    words: 366
+  source_genres:
+  - news
+  - nonfiction
+Kabyle_ADPT:
+  language: Kabyle
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 3860
+    tokens: 39926
+    words: 47468
+  source_genres:
+  - news
+  - nonfiction
+Kangri_KDTB:
+  language: Kangri
+  license: CC BY-SA 4.0
+  quality: 0.14095
+  size:
+    sentences: 288
+    tokens: 2514
+    words: 2514
+  source_genres:
+  - news
+  - nonfiction
+Kannada_MKG:
+  language: Kannada
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 0
+    tokens: 0
+    words: 0
+  source_genres:
+  - grammar-examples
+Karelian_KKPP:
+  language: Karelian
+  license: CC BY-SA 4.0
+  quality: 0.540748
+  size:
+    sentences: 228
+    tokens: 3094
+    words: 3094
+  source_genres:
+  - news
+  - nonfiction
+  - web
+Karo_TuDeT:
+  language: Karo
+  license: CC BY-SA 4.0
+  quality: 0.194792
+  size:
+    sentences: 674
+    tokens: 2318
+    words: 2318
+  source_genres:
+  - news
+  - nonfiction
+Kazakh_KTB:
+  language: Kazakh
+  license: CC BY-SA 4.0
+  quality: 0.006833
+  size:
+    sentences: 1078
+    tokens: 10383
+    words: 10536
+  source_genres:
+  - fiction
+  - news
+  - wiki
+Khoekhoe_KDT:
+  language: Khoekhoe
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 0
+    tokens: 0
+    words: 0
+  source_genres:
+  - news
+  - nonfiction
+Khunsari_AHA:
+  language: Khunsari
+  license: CC BY-SA 4.0
+  quality: 0.251602
+  size:
+    sentences: 10
+    tokens: 74
+    words: 74
+  source_genres:
+  - grammar-examples
+  - spoken
+Kiche_IU:
+  language: Kiche
+  license: CC BY-SA 4.0
+  quality: 0.419349
+  size:
+    sentences: 1435
+    tokens: 9396
+    words: 10013
+  source_genres:
+  - bible
+  - fiction
+  - government
+  - grammar-examples
+  - legal
+  - medical
+  - wiki
+Kiga_EKigaTB:
+  language: Kiga
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 0
+    tokens: 0
+    words: 0
+  source_genres:
+  - news
+  - nonfiction
+Komi_Permyak_UH:
+  language: Komi_Permyak
+  license: CC BY-SA 4.0
+  quality: 0.237049
+  size:
+    sentences: 100
+    tokens: 921
+    words: 921
+  source_genres:
+  - fiction
+Komi_Zyrian_IKDP:
+  language: Komi_Zyrian
+  license: CC BY-SA 4.0
+  quality: 0.251944
+  size:
+    sentences: 214
+    tokens: 2304
+    words: 2309
+  source_genres:
+  - spoken
+Komi_Zyrian_Lattice:
+  language: Komi_Zyrian
+  license: CC BY-SA 4.0
+  quality: 0.290172
+  size:
+    sentences: 662
+    tokens: 8020
+    words: 8072
+  source_genres:
+  - fiction
+Korean_GSD:
+  language: Korean
+  license: CC BY-SA 4.0
+  quality: 0.003674
+  size:
+    sentences: 6339
+    tokens: 80322
+    words: 80322
+  source_genres:
+  - blog
+  - news
+Korean_Kaist:
+  language: Korean
+  license: CC BY-SA 4.0
+  quality: 0.004608
+  size:
+    sentences: 27363
+    tokens: 350090
+    words: 350090
+  source_genres:
+  - academic
+  - fiction
+  - news
+Korean_PUD:
+  language: Korean
+  license: CC BY-SA 3.0
+  quality: 0.002606
+  size:
+    sentences: 1000
+    tokens: 16584
+    words: 16584
+  source_genres:
+  - news
+  - wiki
+Korean_Penn:
+  language: Korean
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 0
+    tokens: 0
+    words: 0
+  source_genres:
+  - news
+  - nonfiction
+Korean_Sejong:
+  language: Korean
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 0
+    tokens: 0
+    words: 0
+  source_genres:
+  - unknown
+Kurmanji_MG:
+  language: Kurmanji
+  license: CC BY-SA 4.0
+  quality: 0.006244
+  size:
+    sentences: 754
+    tokens: 10188
+    words: 10260
+  source_genres:
+  - fiction
+  - wiki
+Kyrgyz_KTB:
+  language: Kyrgyz
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 0
+    tokens: 0
+    words: 0
+  source_genres:
+  - news
+  - nonfiction
+Ladino_BOUN:
+  language: Ladino
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 0
+    tokens: 0
+    words: 0
+  source_genres:
+  - news
+  - nonfiction
+Latin_ITTB:
+  language: Latin
+  license: CC BY-NC-SA 3.0
+  quality: 0.662105
+  size:
+    sentences: 26977
+    tokens: 450515
+    words: 450515
+  source_genres:
+  - nonfiction
+Latin_LLCT:
+  language: Latin
+  license: CC BY-SA 4.0
+  quality: 0.800218
+  size:
+    sentences: 9023
+    tokens: 242411
+    words: 242411
+  source_genres:
+  - legal
+  - nonfiction
+Latin_PROIEL:
+  language: Latin
+  license: CC BY-NC-SA 3.0
+  quality: 0.006355
+  size:
+    sentences: 18411
+    tokens: 200163
+    words: 200163
+  source_genres:
+  - bible
+  - nonfiction
+Latin_Perseus:
+  language: Latin
+  license: CC BY-NC-SA 2.5
+  quality: 0.003862
+  size:
+    sentences: 2273
+    tokens: 29138
+    words: 29138
+  source_genres:
+  - bible
+  - fiction
+  - nonfiction
+Latin_UDante:
+  language: Latin
+  license: CC BY-NC-SA 3.0
+  quality: 0.65957
+  size:
+    sentences: 1721
+    tokens: 55286
+    words: 55495
+  source_genres:
+  - email
+  - nonfiction
+  - poetry
+Latvian_LVTB:
+  language: Latvian
+  license: CC BY-SA 4.0
+  quality: 0.705516
+  size:
+    sentences: 15984
+    tokens: 265722
+    words: 265722
+  source_genres:
+  - academic
+  - fiction
+  - legal
+  - news
+  - spoken
+Laz_BOUN:
+  language: Laz
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 576
+    tokens: 2306
+    words: 2306
+  source_genres:
+  - grammar-examples
+Ligurian_GLT:
+  language: Ligurian
+  license: C-UDA 1.0
+  quality: 0.687178
+  size:
+    sentences: 316
+    tokens: 6568
+    words: 6928
+  source_genres:
+  - bible
+  - fiction
+  - grammar-examples
+  - news
+  - nonfiction
+  - spoken
+  - wiki
+Lithuanian_ALKSNIS:
+  language: Lithuanian
+  license: CC BY-SA 4.0
+  quality: 0.708671
+  size:
+    sentences: 3642
+    tokens: 70051
+    words: 70051
+  source_genres:
+  - fiction
+  - legal
+  - news
+  - nonfiction
+Lithuanian_HSE:
+  language: Lithuanian
+  license: CC BY-SA 4.0
+  quality: 0.364534
+  size:
+    sentences: 263
+    tokens: 5356
+    words: 5356
+  source_genres:
+  - news
+  - nonfiction
+Livvi_KKPP:
+  language: Livvi
+  license: CC BY-SA 4.0
+  quality: 0.51583
+  size:
+    sentences: 125
+    tokens: 1632
+    words: 1632
+  source_genres:
+  - news
+  - nonfiction
+  - web
+Low_Saxon_LSDC:
+  language: Low_Saxon
+  license: CC BY-SA 4.0
+  quality: 0.47592
+  size:
+    sentences: 76
+    tokens: 2314
+    words: 2325
+  source_genres:
+  - fiction
+  - nonfiction
+Macedonian_MTB:
+  language: Macedonian
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 0
+    tokens: 0
+    words: 0
+  source_genres:
+  - news
+  - nonfiction
+Magahi_MGTB:
+  language: Magahi
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 551
+    tokens: 7702
+    words: 7702
+  source_genres:
+  - news
+  - nonfiction
+Magahi_PUD:
+  language: Magahi
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 0
+    tokens: 0
+    words: 0
+  source_genres:
+  - news
+  - wiki
+Maghrebi_Arabic_French_Arabizi:
+  language: Maghrebi_Arabic_French
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 0
+    tokens: 0
+    words: 0
+  source_genres:
+  - news
+  - nonfiction
+Makurap_TuDeT:
+  language: Makurap
+  license: CC BY-SA 4.0
+  quality: 0.202147
+  size:
+    sentences: 31
+    tokens: 146
+    words: 146
+  source_genres:
+  - news
+  - nonfiction
+Maltese_MUDT:
+  language: Maltese
+  license: CC BY-SA 4.0
+  quality: 0.355507
+  size:
+    sentences: 2074
+    tokens: 44162
+    words: 44162
+  source_genres:
+  - fiction
+  - legal
+  - news
+  - nonfiction
+  - wiki
+Mandyali_MDTB:
+  language: Mandyali
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 0
+    tokens: 0
+    words: 0
+  source_genres:
+  - news
+  - nonfiction
+Manx_Cadhan:
+  language: Manx
+  license: GNU GPL 3.0
+  quality: 0.425819
+  size:
+    sentences: 2319
+    tokens: 18502
+    words: 20630
+  source_genres:
+  - bible
+  - blog
+  - fiction
+  - news
+  - nonfiction
+  - social
+  - web
+  - wiki
+Marathi_UFAL:
+  language: Marathi
+  license: CC BY-SA 4.0
+  quality: 0.000351
+  size:
+    sentences: 466
+    tokens: 3506
+    words: 3849
+  source_genres:
+  - fiction
+  - wiki
+Mbya_Guarani_Dooley:
+  language: Mbya_Guarani
+  license: CC BY-NC-SA 4.0
+  quality: 0.045619
+  size:
+    sentences: 1046
+    tokens: 11771
+    words: 11771
+  source_genres:
+  - fiction
+Mbya_Guarani_Thomas:
+  language: Mbya_Guarani
+  license: CC BY-NC-SA 4.0
+  quality: 0.401388
+  size:
+    sentences: 98
+    tokens: 1318
+    words: 1318
+  source_genres:
+  - nonfiction
+Middle_Irish_CritMITB:
+  language: Middle_Irish
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 41
+    tokens: 797
+    words: 802
+  source_genres:
+  - fiction
+Middle_Irish_DipMITB:
+  language: Middle_Irish
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 0
+    tokens: 0
+    words: 0
+  source_genres:
+  - news
+  - nonfiction
+Moksha_JR:
+  language: Moksha
+  license: CC BY-SA 4.0
+  quality: 0.291475
+  size:
+    sentences: 342
+    tokens: 3175
+    words: 3181
+  source_genres:
+  - news
+  - nonfiction
+Mongolian_MTLR:
+  language: Mongolian
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 0
+    tokens: 0
+    words: 0
+  source_genres:
+  - news
+  - nonfiction
+Munduruku_TuDeT:
+  language: Munduruku
+  license: CC BY-SA 4.0
+  quality: 0.190475
+  size:
+    sentences: 109
+    tokens: 507
+    words: 515
+  source_genres:
+  - news
+  - nonfiction
+Naija_NSC:
+  language: Naija
+  license: CC BY-SA 4.0
+  quality: 0.41913
+  size:
+    sentences: 9241
+    tokens: 140799
+    words: 140799
+  source_genres:
+  - spoken
+Nayini_AHA:
+  language: Nayini
+  license: CC BY-SA 4.0
+  quality: 0.251602
+  size:
+    sentences: 10
+    tokens: 78
+    words: 78
+  source_genres:
+  - grammar-examples
+  - spoken
+Ndengeleko_NTB:
+  language: Ndengeleko
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 0
+    tokens: 0
+    words: 0
+  source_genres:
+  - news
+  - nonfiction
+Neapolitan_RB:
+  language: Neapolitan
+  license: CC BY-SA 4.0
+  quality: 0.053434
+  size:
+    sentences: 1
+    tokens: 9
+    words: 10
+  source_genres:
+  - grammar-examples
+Nepali_NTB:
+  language: Nepali
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 0
+    tokens: 0
+    words: 0
+  source_genres:
+  - news
+  - nonfiction
+Nkore_ENkoreTB:
+  language: Nkore
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 0
+    tokens: 0
+    words: 0
+  source_genres:
+  - news
+  - nonfiction
+North_Sami_Giella:
+  language: North_Sami
+  license: CC BY-SA 4.0
+  quality: 0.691315
+  size:
+    sentences: 3122
+    tokens: 26845
+    words: 26845
+  source_genres:
+  - news
+  - nonfiction
+Norwegian_Bokmaal:
+  language: Norwegian
+  license: CC BY-SA 4.0
+  quality: 0.816989
+  size:
+    sentences: 20044
+    tokens: 310221
+    words: 310221
+  source_genres:
+  - blog
+  - news
+  - nonfiction
+Norwegian_Nynorsk:
+  language: Norwegian
+  license: CC BY-SA 4.0
+  quality: 0.816109
+  size:
+    sentences: 17575
+    tokens: 301353
+    words: 301353
+  source_genres:
+  - blog
+  - news
+  - nonfiction
+Norwegian_NynorskLIA:
+  language: Norwegian
+  license: CC BY-SA 4.0
+  quality: 0.00697
+  size:
+    sentences: 5250
+    tokens: 55410
+    words: 55410
+  source_genres:
+  - spoken
+Occitan_OCOR:
+  language: Occitan
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 0
+    tokens: 0
+    words: 0
+  source_genres:
+  - news
+  - nonfiction
+Occitan_TTB:
+  language: Occitan
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 0
+    tokens: 0
+    words: 0
+  source_genres:
+  - news
+  - nonfiction
+Odia_ODTB:
+  language: Odia
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 52
+    tokens: 440
+    words: 440
+  source_genres:
+  - news
+  - nonfiction
+Old_Church_Slavonic_PROIEL:
+  language: Old_Church_Slavonic
+  license: CC BY-NC-SA 3.0
+  quality: 0.00656
+  size:
+    sentences: 6338
+    tokens: 57563
+    words: 57563
+  source_genres:
+  - bible
+Old_East_Slavic_RNC:
+  language: Old_East_Slavic
+  license: CC BY-SA 4.0
+  quality: 0.743961
+  size:
+    sentences: 1059
+    tokens: 34903
+    words: 34903
+  source_genres:
+  - legal
+  - nonfiction
+Old_East_Slavic_Ruthenian:
+  language: Old_East_Slavic
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 0
+    tokens: 0
+    words: 0
+  source_genres:
+  - legal
+  - nonfiction
+Old_East_Slavic_TOROT:
+  language: Old_East_Slavic
+  license: CC BY-NC-SA 3.0
+  quality: 0.006418
+  size:
+    sentences: 16944
+    tokens: 149780
+    words: 149780
+  source_genres:
+  - legal
+  - nonfiction
+Old_French_SRCMF:
+  language: Old_French
+  license: CC BY-NC-SA 3.0
+  quality: 0.34844
+  size:
+    sentences: 18029
+    tokens: 199699
+    words: 199699
+  source_genres:
+  - legal
+  - nonfiction
+  - poetry
+Old_Irish_DipSGG:
+  language: Old_Irish
+  license: CC BY-NC-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 3469
+    tokens: 21750
+    words: 21750
+  source_genres:
+  - academic
+  - grammar-examples
+  - nonfiction
+  - poetry
+Old_Irish_DipWBG:
+  language: Old_Irish
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 0
+    tokens: 0
+    words: 0
+  source_genres:
+  - grammar-examples
+  - nonfiction
+  - poetry
+Old_Japanese_LMJ:
+  language: Old_Japanese
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 1
+    tokens: 10
+    words: 10
+  source_genres:
+  - nonfiction
+Old_Turkish_Tonqq:
+  language: Old_Turkish
+  license: CC0 1.0
+  quality: 0.112136
+  size:
+    sentences: 18
+    tokens: 221
+    words: 221
+  source_genres:
+  - nonfiction
+Persian_PerDT:
+  language: Persian
+  license: CC BY-SA 4.0
+  quality: 0.005648
+  size:
+    sentences: 29107
+    tokens: 494163
+    words: 501776
+  source_genres:
+  - academic
+  - blog
+  - fiction
+  - news
+  - nonfiction
+  - web
+Persian_Seraji:
+  language: Persian
+  license: CC BY-SA 4.0
+  quality: 0.004629
+  size:
+    sentences: 5997
+    tokens: 151625
+    words: 152920
+  source_genres:
+  - fiction
+  - legal
+  - medical
+  - news
+  - nonfiction
+  - social
+  - spoken
+Pnar_PTB:
+  language: Pnar
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 0
+    tokens: 0
+    words: 0
+  source_genres:
+  - grammar-examples
+  - spoken
+Polish_LFG:
+  language: Polish
+  license: GNU GPL 3.0
+  quality: 0.78584
+  size:
+    sentences: 17246
+    tokens: 130967
+    words: 130967
+  source_genres:
+  - fiction
+  - news
+  - nonfiction
+  - social
+  - spoken
+Polish_PUD:
+  language: Polish
+  license: CC BY-SA 4.0
+  quality: 0.655425
+  size:
+    sentences: 1000
+    tokens: 18338
+    words: 18389
+  source_genres:
+  - news
+  - nonfiction
+Polish_SZ:
+  language: Polish
+  license: CC BY-NC-SA 4.0
+  quality: 0.804723
+  size:
+    sentences: 22152
+    tokens: 347377
+    words: 350036
+  source_genres:
+  - fiction
+  - news
+  - nonfiction
+Pomak_Philotis:
+  language: Pomak
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 0
+    tokens: 0
+    words: 0
+  source_genres:
+  - news
+  - nonfiction
+Pontic_BOUN:
+  language: Pontic
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 0
+    tokens: 0
+    words: 0
+  source_genres:
+  - news
+  - nonfiction
+Portuguese_Bosque:
+  language: Portuguese
+  license: CC BY-SA 4.0
+  quality: 0.834242
+  size:
+    sentences: 9357
+    tokens: 210963
+    words: 227829
+  source_genres:
+  - news
+Portuguese_DHBB:
+  language: Portuguese
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 0
+    tokens: 0
+    words: 0
+  source_genres:
+  - wiki
+Portuguese_GSD:
+  language: Portuguese
+  license: CC BY-SA 4.0
+  quality: 0.003952
+  size:
+    sentences: 12019
+    tokens: 297057
+    words: 318922
+  source_genres:
+  - blog
+  - news
+Portuguese_PUD:
+  language: Portuguese
+  license: CC BY-SA 3.0
+  quality: 0.321713
+  size:
+    sentences: 1000
+    tokens: 21917
+    words: 23407
+  source_genres:
+  - news
+  - wiki
+Prakrit_DIPI:
+  language: Prakrit
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 84
+    tokens: 811
+    words: 973
+  source_genres:
+  - news
+  - nonfiction
+Punjabi_PunTB:
+  language: Punjabi
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 71
+    tokens: 1656
+    words: 1664
+  source_genres:
+  - news
+  - nonfiction
+Romanian_ArT:
+  language: Romanian
+  license: CC BY-SA 4.0
+  quality: 0.586058
+  size:
+    sentences: 50
+    tokens: 573
+    words: 573
+  source_genres:
+  - fiction
+Romanian_Nonstandard:
+  language: Romanian
+  license: CC BY-SA 4.0
+  quality: 0.826218
+  size:
+    sentences: 26225
+    tokens: 572436
+    words: 572436
+  source_genres:
+  - bible
+  - poetry
+Romanian_RRT:
+  language: Romanian
+  license: CC BY-SA 4.0
+  quality: 0.827583
+  size:
+    sentences: 9524
+    tokens: 218510
+    words: 218510
+  source_genres:
+  - academic
+  - fiction
+  - legal
+  - medical
+  - news
+  - nonfiction
+  - wiki
+Romanian_SiMoNERo:
+  language: Romanian
+  license: CC BY-SA 4.0
+  quality: 0.754938
+  size:
+    sentences: 4681
+    tokens: 146020
+    words: 146020
+  source_genres:
+  - medical
+Romansh_Rumgr:
+  language: Romansh
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 0
+    tokens: 0
+    words: 0
+  source_genres:
+  - news
+  - nonfiction
+Romansh_Sursilv:
+  language: Romansh
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 0
+    tokens: 0
+    words: 0
+  source_genres:
+  - news
+  - nonfiction
+Russian_GSD:
+  language: Russian
+  license: CC BY-SA 4.0
+  quality: 0.715713
+  size:
+    sentences: 5030
+    tokens: 98000
+    words: 98000
+  source_genres:
+  - wiki
+Russian_PUD:
+  language: Russian
+  license: CC BY-SA 3.0
+  quality: 0.48375
+  size:
+    sentences: 1000
+    tokens: 19355
+    words: 19355
+  source_genres:
+  - news
+  - wiki
+Russian_SynTagRus:
+  language: Russian
+  license: CC BY-NC-SA 4.0
+  quality: 0.782242
+  size:
+    sentences: 87336
+    tokens: 1517883
+    words: 1517883
+  source_genres:
+  - fiction
+  - news
+  - nonfiction
+Russian_Taiga:
+  language: Russian
+  license: CC BY-SA 4.0
+  quality: 0.863652
+  size:
+    sentences: 17871
+    tokens: 197001
+    words: 197001
+  source_genres:
+  - blog
+  - fiction
+  - news
+  - poetry
+  - social
+  - wiki
+Sanskrit_UFAL:
+  language: Sanskrit
+  license: CC BY-SA 4.0
+  quality: 0.613612
+  size:
+    sentences: 230
+    tokens: 1474
+    words: 1843
+  source_genres:
+  - fiction
+Sanskrit_Vedic:
+  language: Sanskrit
+  license: CC BY-SA 4.0
+  quality: 0.337961
+  size:
+    sentences: 3997
+    tokens: 27117
+    words: 27117
+  source_genres:
+  - nonfiction
+Scottish_Gaelic_ARCOSG:
+  language: Scottish_Gaelic
+  license: CC BY-SA 4.0
+  quality: 0.473491
+  size:
+    sentences: 4402
+    tokens: 81266
+    words: 84885
+  source_genres:
+  - fiction
+  - news
+  - nonfiction
+  - spoken
+Serbian_SET:
+  language: Serbian
+  license: CC BY-SA 4.0
+  quality: 0.786673
+  size:
+    sentences: 4384
+    tokens: 97673
+    words: 97673
+  source_genres:
+  - news
+Shipibo_Konibo_PUCP:
+  language: Shipibo_Konibo
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 0
+    tokens: 0
+    words: 0
+  source_genres:
+  - news
+  - nonfiction
+Sindhi_MazharDootio:
+  language: Sindhi
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 663
+    tokens: 6863
+    words: 6863
+  source_genres:
+  - news
+  - nonfiction
+Sinhala_IITS:
+  language: Sinhala
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 0
+    tokens: 0
+    words: 0
+  source_genres:
+  - nonfiction
+Sinhala_STB:
+  language: Sinhala
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 0
+    tokens: 0
+    words: 0
+  source_genres:
+  - news
+  - nonfiction
+Skolt_Sami_Giellagas:
+  language: Skolt_Sami
+  license: CC BY-SA 4.0
+  quality: 0.279528
+  size:
+    sentences: 200
+    tokens: 2460
+    words: 2461
+  source_genres:
+  - news
+  - nonfiction
+  - spoken
+Slovak_SNK:
+  language: Slovak
+  license: CC BY-SA 4.0
+  quality: 0.733758
+  size:
+    sentences: 10604
+    tokens: 106130
+    words: 106184
+  source_genres:
+  - fiction
+  - news
+  - nonfiction
+Slovenian_SSJ:
+  language: Slovenian
+  license: CC BY-NC-SA 4.0
+  quality: 0.785516
+  size:
+    sentences: 8000
+    tokens: 140670
+    words: 140670
+  source_genres:
+  - fiction
+  - news
+  - nonfiction
+Slovenian_SST:
+  language: Slovenian
+  license: CC BY-NC-SA 4.0
+  quality: 0.657886
+  size:
+    sentences: 3188
+    tokens: 29488
+    words: 29488
+  source_genres:
+  - spoken
+Soi_AHA:
+  language: Soi
+  license: CC BY-SA 4.0
+  quality: 0.231791
+  size:
+    sentences: 8
+    tokens: 55
+    words: 55
+  source_genres:
+  - grammar-examples
+  - spoken
+Somali_STB:
+  language: Somali
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 0
+    tokens: 0
+    words: 0
+  source_genres:
+  - ''
+Sorani_MG:
+  language: Sorani
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 0
+    tokens: 0
+    words: 0
+  source_genres:
+  - news
+  - nonfiction
+South_Levantine_Arabic_MADAR:
+  language: South_Levantine_Arabic
+  license: CC BY-SA 4.0
+  quality: 0.212626
+  size:
+    sentences: 100
+    tokens: 789
+    words: 789
+  source_genres:
+  - social
+  - spoken
+Spanish_AnCora:
+  language: Spanish
+  license: CC BY 4.0
+  quality: 0.817932
+  size:
+    sentences: 17662
+    tokens: 555315
+    words: 567894
+  source_genres:
+  - news
+Spanish_GSD:
+  language: Spanish
+  license: CC BY-SA 4.0
+  quality: 0.007399
+  size:
+    sentences: 16013
+    tokens: 423346
+    words: 431587
+  source_genres:
+  - blog
+  - news
+  - reviews
+  - wiki
+Spanish_PUD:
+  language: Spanish
+  license: CC BY-SA 3.0
+  quality: 0.00464
+  size:
+    sentences: 1000
+    tokens: 22822
+    words: 23287
+  source_genres:
+  - news
+  - wiki
+Swahili_OPUSGV:
+  language: Swahili
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 0
+    tokens: 0
+    words: 0
+  source_genres:
+  - news
+  - nonfiction
+Swedish_LinES:
+  language: Swedish
+  license: CC BY-NC-SA 4.0
+  quality: 0.732417
+  size:
+    sentences: 5243
+    tokens: 90960
+    words: 90960
+  source_genres:
+  - fiction
+  - nonfiction
+  - spoken
+Swedish_PUD:
+  language: Swedish
+  license: CC BY-SA 4.0
+  quality: 0.289697
+  size:
+    sentences: 1000
+    tokens: 19085
+    words: 19085
+  source_genres:
+  - news
+  - wiki
+Swedish_Sign_Language_SSLC:
+  language: Swedish_Sign_Language
+  license: CC BY-SA 4.0
+  quality: 0.00117
+  size:
+    sentences: 203
+    tokens: 1610
+    words: 1610
+  source_genres:
+  - spoken
+Swedish_Talbanken:
+  language: Swedish
+  license: CC BY-SA 4.0
+  quality: 0.007537
+  size:
+    sentences: 6026
+    tokens: 96859
+    words: 96859
+  source_genres:
+  - news
+  - nonfiction
+Swiss_German_UZH:
+  language: Swiss_German
+  license: CC BY-SA 4.0
+  quality: 0.162768
+  size:
+    sentences: 100
+    tokens: 1444
+    words: 1444
+  source_genres:
+  - blog
+  - fiction
+  - news
+  - nonfiction
+  - wiki
+Tagalog_TRG:
+  language: Tagalog
+  license: CC BY-SA 4.0
+  quality: 0.556517
+  size:
+    sentences: 128
+    tokens: 734
+    words: 734
+  source_genres:
+  - grammar-examples
+Tagalog_Ugnayan:
+  language: Tagalog
+  license: CC BY-NC-SA 4.0
+  quality: 0.207013
+  size:
+    sentences: 94
+    tokens: 1011
+    words: 1097
+  source_genres:
+  - fiction
+  - nonfiction
+Tamil_MWTT:
+  language: Tamil
+  license: CC BY-SA 4.0
+  quality: 0.250079
+  size:
+    sentences: 534
+    tokens: 2536
+    words: 2584
+  source_genres:
+  - news
+Tamil_TTB:
+  language: Tamil
+  license: CC BY-NC-SA 3.0
+  quality: 0.546112
+  size:
+    sentences: 600
+    tokens: 8635
+    words: 9581
+  source_genres:
+  - news
+Tatar_NMCTT:
+  language: Tatar
+  license: CC BY-SA 4.0
+  quality: 0.386015
+  size:
+    sentences: 66
+    tokens: 1119
+    words: 1119
+  source_genres:
+  - news
+  - nonfiction
+Telugu_MTG:
+  language: Telugu
+  license: CC BY-SA 4.0
+  quality: 0.215191
+  size:
+    sentences: 1328
+    tokens: 6465
+    words: 6465
+  source_genres:
+  - grammar-examples
+Thai_PUD:
+  language: Thai
+  license: CC BY-SA 3.0
+  quality: 0.002749
+  size:
+    sentences: 1000
+    tokens: 22322
+    words: 22322
+  source_genres:
+  - news
+  - wiki
+Tigrinya_Keren:
+  language: Tigrinya
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 0
+    tokens: 0
+    words: 0
+  source_genres:
+  - news
+  - nonfiction
+Tunisian_Arabic_NAxLAT:
+  language: Tunisian_Arabic
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 0
+    tokens: 0
+    words: 0
+  source_genres:
+  - news
+  - nonfiction
+Tupinamba_TuDeT:
+  language: Tupinamba
+  license: CC BY-SA 4.0
+  quality: 0.242818
+  size:
+    sentences: 218
+    tokens: 1542
+    words: 1560
+  source_genres:
+  - news
+  - nonfiction
+Turkish_Atis:
+  language: Turkish
+  license: CC BY-SA 4.0
+  quality: 0.756665
+  size:
+    sentences: 5432
+    tokens: 45875
+    words: 45875
+  source_genres:
+  - news
+  - nonfiction
+Turkish_BOUN:
+  language: Turkish
+  license: CC BY-SA 4.0
+  quality: 0.399227
+  size:
+    sentences: 9761
+    tokens: 121214
+    words: 122383
+  source_genres:
+  - news
+  - nonfiction
+Turkish_FrameNet:
+  language: Turkish
+  license: CC BY-SA 4.0
+  quality: 0.666489
+  size:
+    sentences: 2698
+    tokens: 19221
+    words: 19221
+  source_genres:
+  - grammar-examples
+Turkish_GB:
+  language: Turkish
+  license: CC BY-SA 4.0
+  quality: 0.724644
+  size:
+    sentences: 2880
+    tokens: 16803
+    words: 17177
+  source_genres:
+  - grammar-examples
+Turkish_German_SAGT:
+  language: Turkish_German
+  license: CC BY-NC-SA 4.0
+  quality: 0.505454
+  size:
+    sentences: 2184
+    tokens: 36934
+    words: 37227
+  source_genres:
+  - spoken
+Turkish_IMST:
+  language: Turkish
+  license: CC BY-NC-SA 4.0
+  quality: 0.004344
+  size:
+    sentences: 5635
+    tokens: 56396
+    words: 57859
+  source_genres:
+  - news
+  - nonfiction
+Turkish_Kenet:
+  language: Turkish
+  license: CC BY-SA 4.0
+  quality: 0.790534
+  size:
+    sentences: 18687
+    tokens: 178658
+    words: 178658
+  source_genres:
+  - grammar-examples
+Turkish_PUD:
+  language: Turkish
+  license: CC BY-SA 3.0
+  quality: 0.353304
+  size:
+    sentences: 1000
+    tokens: 16536
+    words: 16882
+  source_genres:
+  - news
+  - wiki
+Turkish_Penn:
+  language: Turkish
+  license: CC BY-SA 4.0
+  quality: 0.777185
+  size:
+    sentences: 16396
+    tokens: 183554
+    words: 183554
+  source_genres:
+  - news
+  - nonfiction
+Turkish_Tourism:
+  language: Turkish
+  license: CC BY-SA 4.0
+  quality: 0.762357
+  size:
+    sentences: 19725
+    tokens: 91733
+    words: 91733
+  source_genres:
+  - reviews
+Ukrainian_IU:
+  language: Ukrainian
+  license: CC BY-NC-SA 4.0
+  quality: 0.00884
+  size:
+    sentences: 7060
+    tokens: 122275
+    words: 122324
+  source_genres:
+  - blog
+  - email
+  - fiction
+  - grammar-examples
+  - legal
+  - news
+  - reviews
+  - social
+  - web
+  - wiki
+Upper_Sorbian_UFAL:
+  language: Upper_Sorbian
+  license: CC BY-SA 4.0
+  quality: 0.705896
+  size:
+    sentences: 646
+    tokens: 11196
+    words: 11196
+  source_genres:
+  - nonfiction
+  - wiki
+Urdu_UDTB:
+  language: Urdu
+  license: CC BY-NC-SA 4.0
+  quality: 0.006929
+  size:
+    sentences: 5130
+    tokens: 138077
+    words: 138077
+  source_genres:
+  - news
+Uyghur_UDT:
+  language: Uyghur
+  license: CC BY-SA 4.0
+  quality: 0.003532
+  size:
+    sentences: 3456
+    tokens: 40236
+    words: 40236
+  source_genres:
+  - fiction
+Vietnamese_VTB:
+  language: Vietnamese
+  license: CC BY-SA 4.0
+  quality: 0.003764
+  size:
+    sentences: 3000
+    tokens: 43754
+    words: 43754
+  source_genres:
+  - news
+Warlpiri_UFAL:
+  language: Warlpiri
+  license: CC BY-SA 4.0
+  quality: 0.227266
+  size:
+    sentences: 55
+    tokens: 306
+    words: 315
+  source_genres:
+  - grammar-examples
+Welsh_CCG:
+  language: Welsh
+  license: CC BY-SA 4.0
+  quality: 0.503131
+  size:
+    sentences: 2111
+    tokens: 40539
+    words: 41208
+  source_genres:
+  - fiction
+  - grammar-examples
+  - news
+  - nonfiction
+  - wiki
+Western_Armenian_ArmTDP:
+  language: Western_Armenian
+  license: CC BY-SA 4.0
+  quality: 0.846344
+  size:
+    sentences: 5026
+    tokens: 91630
+    words: 92725
+  source_genres:
+  - blog
+  - fiction
+  - news
+  - nonfiction
+Western_Sierra_Puebla_Nahuatl_ITML:
+  language: Western_Sierra_Puebla_Nahuatl
+  license: CC BY-SA 4.0
+  quality: 0.0
+  size:
+    sentences: 0
+    tokens: 0
+    words: 0
+  source_genres:
+  - grammar-examples
+Wolof_WTB:
+  language: Wolof
+  license: CC BY-SA 4.0
+  quality: 0.786887
+  size:
+    sentences: 2107
+    tokens: 42832
+    words: 44258
+  source_genres:
+  - bible
+  - wiki
+Xibe_XDT:
+  language: Xibe
+  license: CC BY-NC-SA 3.0
+  quality: 0.513344
+  size:
+    sentences: 810
+    tokens: 15282
+    words: 15401
+  source_genres:
+  - grammar-examples
+  - news
+Yakut_YKTDT:
+  language: Yakut
+  license: CC BY-SA 4.0
+  quality: 0.262364
+  size:
+    sentences: 60
+    tokens: 271
+    words: 271
+  source_genres:
+  - news
+  - nonfiction
+Yoruba_YTB:
+  language: Yoruba
+  license: CC BY-SA 4.0
+  quality: 0.334389
+  size:
+    sentences: 318
+    tokens: 8198
+    words: 8243
+  source_genres:
+  - bible
+  - wiki
+Yupik_SLI:
+  language: Yupik
+  license: CC BY-SA 4.0
+  quality: 0.277561
+  size:
+    sentences: 309
+    tokens: 1221
+    words: 2568
+  source_genres:
+  - grammar-examples

@@ -1,0 +1,27 @@
+defaults:
+  - default_train
+  - model: dogtag
+  - _self_
+
+experiment_name: DogTag_mono
+architecture: dogtag
+
+seed: 610
+gpu: 1
+deterministic: False
+debug: False
+fdev_run: False
+
+data:
+  language: English
+  treebank_name: ATIS
+  batch_first: True
+  len_sorted: True
+  batch_size: 32
+  source: ./morphological_tagging/data/um-treebanks-v2.9
+
+trainer:
+  precision: 16
+  gradient_clip_val: 2
+  max_epochs: 50
+  num_sanity_val_steps: 0

@@ -1,0 +1,20 @@
+defaults:
+  - default_train
+  - model: udify_bert
+  - _self_
+
+experiment_name: UDIFY_mono
+architecture: udify
+
+data:
+  language: English
+  treebank_name: ATIS
+  batch_first: True
+  len_sorted: True
+  batch_size: 32
+  source: ./morphological_tagging/data/um-treebanks-v2.9
+
+trainer:
+  gradient_clip_val: 2
+  max_epochs: 50
+  num_sanity_val_steps: 0

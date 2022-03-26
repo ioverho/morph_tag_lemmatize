@@ -1,0 +1,994 @@
+{
+    "0": [
+        "Zero person",
+        "Person"
+    ],
+    "1": [
+        "First person",
+        "Person"
+    ],
+    "2": [
+        "Second person",
+        "Person"
+    ],
+    "3": [
+        "Third person",
+        "Person"
+    ],
+    "4": [
+        "Fourth person",
+        "Person"
+    ],
+    "1day": [
+        "Within 1 day",
+        "Tense"
+    ],
+    "ab": [
+        "Absolute",
+        "Comparison"
+    ],
+    "abl": [
+        "Ablative",
+        "Case"
+    ],
+    "abs": [
+        "Absolutive",
+        "Case"
+    ],
+    "abv": [
+        "Above",
+        "Deixis"
+    ],
+    "acc": [
+        "Accusative",
+        "Case"
+    ],
+    "accmp": [
+        "Accomplishment",
+        "Aktionsart"
+    ],
+    "acfoc": [
+        "Accompanier Focus",
+        "Voice"
+    ],
+    "ach": [
+        "Achievement",
+        "Aktionsart"
+    ],
+    "act": [
+        "Active",
+        "Voice"
+    ],
+    "acty": [
+        "Activity",
+        "Aktionsart"
+    ],
+    "adj": [
+        "Adjective",
+        "Part of Speech"
+    ],
+    "adm": [
+        "Admirative",
+        "Mood"
+    ],
+    "adp": [
+        "Adposition",
+        "Part of Speech"
+    ],
+    "adv": [
+        "Adverb",
+        "Part of Speech"
+    ],
+    "agfoc": [
+        "Agent Focus",
+        "Voice"
+    ],
+    "all": [
+        "Allative",
+        "Case"
+    ],
+    "aln": [
+        "Alienable",
+        "Possession"
+    ],
+    "anim": [
+        "Animate",
+        "Animacy"
+    ],
+    "ante": [
+        "Near, in front of",
+        "Case"
+    ],
+    "antip": [
+        "Antipassive",
+        "Voice"
+    ],
+    "appl": [
+        "Applicative",
+        "Valency"
+    ],
+    "apprx": [
+        "Approximative",
+        "Case"
+    ],
+    "apud": [
+        "Next to",
+        "Case"
+    ],
+    "argac3s": [
+        "3.sg Object (from feature template)",
+        "Argument Marking"
+    ],
+    "art": [
+        "Article",
+        "Part of Speech"
+    ],
+    "assum": [
+        "Assumed",
+        "Evidentiality"
+    ],
+    "at": [
+        "At",
+        "Case"
+    ],
+    "atel": [
+        "Atelic",
+        "Aktionsart"
+    ],
+    "aud": [
+        "Auditory",
+        "Evidentiality"
+    ],
+    "aunprp": [
+        "Australian Non-Purposive",
+        "Mood"
+    ],
+    "auprp": [
+        "Australian Purposive",
+        "Mood"
+    ],
+    "aux": [
+        "Auxiliary",
+        "Part of Speech"
+    ],
+    "avoid": [
+        "Avoidance style",
+        "Politeness"
+    ],
+    "avr": [
+        "Aversive",
+        "Case"
+    ],
+    "bantu1-23": [
+        "Bantu Noun Classes",
+        "Gender"
+    ],
+    "bel": [
+        "Below",
+        "Deixis"
+    ],
+    "ben": [
+        "Benefactive",
+        "Case"
+    ],
+    "bfoc": [
+        "Beneficiary Focus",
+        "Voice"
+    ],
+    "byway": [
+        "Essive-modal",
+        "Case"
+    ],
+    "caus": [
+        "Causative",
+        "Valency"
+    ],
+    "cfoc": [
+        "Conveyed Focus",
+        "Voice"
+    ],
+    "circ": [
+        "Near",
+        "Case"
+    ],
+    "clf": [
+        "Classifier",
+        "Part of Speech"
+    ],
+    "cmpr": [
+        "Comparative",
+        "Comparison"
+    ],
+    "cn_r_mn": [
+        "SR among NPs in any argument position",
+        "Switch-Reference"
+    ],
+    "col": [
+        "Colloquial",
+        "Politeness"
+    ],
+    "com": [
+        "Comitative",
+        "Case"
+    ],
+    "comp": [
+        "Complementizer",
+        "Part of Speech"
+    ],
+    "compv": [
+        "Comparative",
+        "Case"
+    ],
+    "cond": [
+        "Conditional",
+        "Mood"
+    ],
+    "conj": [
+        "Conjunction",
+        "Part of Speech"
+    ],
+    "dat": [
+        "Dative",
+        "Case"
+    ],
+    "deb": [
+        "Debitive",
+        "Mood"
+    ],
+    "decl": [
+        "Declarative",
+        "Interrogativity"
+    ],
+    "ded": [
+        "Deductive",
+        "Mood"
+    ],
+    "def": [
+        "Definite",
+        "Definiteness"
+    ],
+    "det": [
+        "Determiner",
+        "Part of Speech"
+    ],
+    "dir": [
+        "Direct",
+        "Voice"
+    ],
+    "ditr": [
+        "Ditransitive",
+        "Valency"
+    ],
+    "drct": [
+        "Direct",
+        "Evidentiality"
+    ],
+    "ds": [
+        "DS",
+        "Switch-Reference"
+    ],
+    "dsadv": [
+        "DS Adverbial",
+        "Switch-Reference"
+    ],
+    "du": [
+        "Dual",
+        "Number"
+    ],
+    "dur": [
+        "Durative",
+        "Aktionsart"
+    ],
+    "dyn": [
+        "Dynamic",
+        "Aktionsart"
+    ],
+    "elev": [
+        "Formal, Referent Elevating",
+        "Politeness"
+    ],
+    "eqt": [
+        "Equative",
+        "Comparison"
+    ],
+    "eqtv": [
+        "Equative",
+        "Case"
+    ],
+    "erg": [
+        "Ergative",
+        "Case"
+    ],
+    "ess": [
+        "Essive",
+        "Case"
+    ],
+    "even": [
+        "Even",
+        "Deixis"
+    ],
+    "excl": [
+        "Exclusive",
+        "Person"
+    ],
+    "fem": [
+        "Feminine",
+        "Gender"
+    ],
+    "fh": [
+        "Firsthand",
+        "Evidentiality"
+    ],
+    "fin": [
+        "Finite",
+        "Finiteness"
+    ],
+    "foc": [
+        "Focus",
+        "Information Structure"
+    ],
+    "foreg": [
+        "Formal register",
+        "Politeness"
+    ],
+    "form": [
+        "Formal",
+        "Politeness"
+    ],
+    "frml": [
+        "Formal",
+        "Case"
+    ],
+    "fut": [
+        "Future",
+        "Tense"
+    ],
+    "gen": [
+        "Genitive",
+        "Case"
+    ],
+    "gpauc": [
+        "Greater paucal",
+        "Number"
+    ],
+    "grpl": [
+        "Greater plural",
+        "Number"
+    ],
+    "hab": [
+        "Habitual",
+        "Aspect"
+    ],
+    "high": [
+        "High status",
+        "Politeness"
+    ],
+    "hod": [
+        "Hodiernal",
+        "Tense"
+    ],
+    "hrsy": [
+        "Hearsay",
+        "Evidentiality"
+    ],
+    "hum": [
+        "Human",
+        "Animacy"
+    ],
+    "humb": [
+        "Formal, Speaker Humbling",
+        "Politeness"
+    ],
+    "ifoc": [
+        "Instrument Focus",
+        "Voice"
+    ],
+    "immed": [
+        "Immediate",
+        "Tense"
+    ],
+    "imp": [
+        "Imperative-Jussive",
+        "Mood"
+    ],
+    "imprs": [
+        "Impersonal",
+        "Valency"
+    ],
+    "in": [
+        "In",
+        "Case"
+    ],
+    "inan": [
+        "Inanimate",
+        "Animacy"
+    ],
+    "incl": [
+        "Inclusive",
+        "Person"
+    ],
+    "ind": [
+        "Indicative",
+        "Mood"
+    ],
+    "indf": [
+        "Indefinite",
+        "Definiteness"
+    ],
+    "infer": [
+        "Inferred",
+        "Evidentiality"
+    ],
+    "infm": [
+        "Informal",
+        "Politeness"
+    ],
+    "ins": [
+        "Instrumental",
+        "Case"
+    ],
+    "int": [
+        "Interrogative",
+        "Interrogativity"
+    ],
+    "inten": [
+        "Intentive",
+        "Mood"
+    ],
+    "inter": [
+        "Among",
+        "Case"
+    ],
+    "intj": [
+        "Interjection",
+        "Part of Speech"
+    ],
+    "intr": [
+        "Intransitive",
+        "Valency"
+    ],
+    "inv": [
+        "Inverse",
+        "Voice"
+    ],
+    "invn": [
+        "Inverse",
+        "Number"
+    ],
+    "ipfv": [
+        "Imperfective",
+        "Aspect"
+    ],
+    "irr": [
+        "Irrealis",
+        "Mood"
+    ],
+    "iter": [
+        "Iterative",
+        "Aspect"
+    ],
+    "lfoc": [
+        "Location Focus",
+        "Voice"
+    ],
+    "lgspec1": [
+        "Varies by language",
+        "Language-Specific Features "
+    ],
+    "lgspec2": [
+        "Varies by language",
+        "Language-Specific Features "
+    ],
+    "lit": [
+        "Literary",
+        "Politeness"
+    ],
+    "lkly": [
+        "Likely",
+        "Mood"
+    ],
+    "log": [
+        "Logophoric",
+        "Switch-Reference"
+    ],
+    "low": [
+        "Low status",
+        "Politeness"
+    ],
+    "masc": [
+        "Masculine",
+        "Gender"
+    ],
+    "med": [
+        "Medial",
+        "Deixis"
+    ],
+    "mid": [
+        "Middle",
+        "Voice"
+    ],
+    "n": [
+        "Noun",
+        "Part of Speech"
+    ],
+    "nakh1-8": [
+        "Nakh-Daghestanian Noun Classes",
+        "Gender"
+    ],
+    "naln": [
+        "Inalienable",
+        "Possession"
+    ],
+    "neg": [
+        "Negative",
+        "Polarity"
+    ],
+    "neut": [
+        "Neuter",
+        "Gender"
+    ],
+    "nfh": [
+        "Non-firsthand",
+        "Evidentiality"
+    ],
+    "nfin": [
+        "Nonfinite",
+        "Finiteness"
+    ],
+    "nhum": [
+        "Non-human",
+        "Animacy"
+    ],
+    "nom": [
+        "Nominative",
+        "Case"
+    ],
+    "noms": [
+        "Nominative, S-only",
+        "Case"
+    ],
+    "noref": [
+        "No Reference Point, Distal",
+        "Deixis"
+    ],
+    "nspec": [
+        "Non-Specific",
+        "Definiteness"
+    ],
+    "num": [
+        "Numeral",
+        "Part of Speech"
+    ],
+    "nvis": [
+        "Invisible",
+        "Deixis"
+    ],
+    "nvsen": [
+        "Non-visual sensory",
+        "Evidentiality"
+    ],
+    "oblig": [
+        "Obligative",
+        "Mood"
+    ],
+    "obv": [
+        "Obviative",
+        "Person"
+    ],
+    "on": [
+        "On",
+        "Case"
+    ],
+    "onhr": [
+        "On (horizontal)",
+        "Case"
+    ],
+    "onvr": [
+        "On (vertical)",
+        "Case"
+    ],
+    "opt": [
+        "Optative-Desiderative",
+        "Mood"
+    ],
+    "or": [
+        "Open Reference",
+        "Switch-Reference"
+    ],
+    "part": [
+        "Particle",
+        "Part of Speech"
+    ],
+    "pass": [
+        "Passive",
+        "Voice"
+    ],
+    "pauc": [
+        "Paucal",
+        "Number"
+    ],
+    "pct": [
+        "Punctual",
+        "Aktionsart"
+    ],
+    "perm": [
+        "Permissive",
+        "Mood"
+    ],
+    "pfoc": [
+        "Patient Focus",
+        "Voice"
+    ],
+    "pfv": [
+        "Perfective",
+        "Aspect"
+    ],
+    "phor": [
+        "Phoric, situated in discourse",
+        "Deixis"
+    ],
+    "pl": [
+        "Plural",
+        "Number"
+    ],
+    "pol": [
+        "Polite",
+        "Politeness"
+    ],
+    "pos": [
+        "Positive",
+        "Person"
+    ],
+    "pos": [
+        "Positive",
+        "Polarity"
+    ],
+    "post": [
+        "Behind",
+        "Case"
+    ],
+    "pot": [
+        "Potential",
+        "Mood"
+    ],
+    "prf": [
+        "Perfect",
+        "Aspect"
+    ],
+    "priv": [
+        "Privative",
+        "Case"
+    ],
+    "pro": [
+        "Pronoun",
+        "Part of Speech"
+    ],
+    "prog": [
+        "Progressive",
+        "Aspect"
+    ],
+    "prol": [
+        "Prolative/translative",
+        "Case"
+    ],
+    "propn": [
+        "Proper Name",
+        "Part of Speech"
+    ],
+    "propr": [
+        "Proprietive",
+        "Case"
+    ],
+    "prosp": [
+        "Prospective",
+        "Aspect"
+    ],
+    "prox": [
+        "Proximate",
+        "Case"
+    ],
+    "prox": [
+        "Proximate",
+        "Deixis"
+    ],
+    "prp": [
+        "Purposive",
+        "Case"
+    ],
+    "prs": [
+        "Present",
+        "Tense"
+    ],
+    "prt": [
+        "Partitive",
+        "Case"
+    ],
+    "prx": [
+        "Proximate",
+        "Person"
+    ],
+    "pss1d": [
+        "Possession by 1.du",
+        "Possession"
+    ],
+    "pss1de": [
+        "Possession by 1.du.excl",
+        "Possession"
+    ],
+    "pss1di": [
+        "Possession by 1.du.incl",
+        "Possession"
+    ],
+    "pss1p": [
+        "Possession by 1.pl",
+        "Possession"
+    ],
+    "pss1pe": [
+        "Possession by 1.pl.excl",
+        "Possession"
+    ],
+    "pss1pi": [
+        "Possession by 1.pl.incl",
+        "Possession"
+    ],
+    "pss1s": [
+        "Possession by 1.sg",
+        "Possession"
+    ],
+    "pss2d": [
+        "Possession by 2.du",
+        "Possession"
+    ],
+    "pss2df": [
+        "Possession by 2.du.fem",
+        "Possession"
+    ],
+    "pss2dm": [
+        "Possession by 2.du.masc",
+        "Possession"
+    ],
+    "pss2p": [
+        "Possession by 2.pl",
+        "Possession"
+    ],
+    "pss2pf": [
+        "Possession by 2.pl.fem",
+        "Possession"
+    ],
+    "pss2pm": [
+        "Possession by 2.pl.masc",
+        "Possession"
+    ],
+    "pss2s": [
+        "Possession by 2.sg",
+        "Possession"
+    ],
+    "pss2sf": [
+        "Possession by 2.sg.fem",
+        "Possession"
+    ],
+    "pss2sform": [
+        "Possession by 2.sg.form",
+        "Possession"
+    ],
+    "pss2sinfm": [
+        "Possession by 2.sg.infm",
+        "Possession"
+    ],
+    "pss2sm": [
+        "Possession by 2.sg.masc",
+        "Possession"
+    ],
+    "pss3d": [
+        "Possession by 3.du",
+        "Possession"
+    ],
+    "pss3df": [
+        "Possession by 3.du.fem",
+        "Possession"
+    ],
+    "pss3dm": [
+        "Possession by 3.du.masc",
+        "Possession"
+    ],
+    "pss3p": [
+        "Possession by 3.pl",
+        "Possession"
+    ],
+    "pss3pf": [
+        "Possession by 3.pl.fem",
+        "Possession"
+    ],
+    "pss3pm": [
+        "Possession by 3.pl.masc",
+        "Possession"
+    ],
+    "pss3s": [
+        "Possession by 3.sg",
+        "Possession"
+    ],
+    "pss3sf": [
+        "Possession by 3.sg.fem",
+        "Possession"
+    ],
+    "pss3sm": [
+        "Possession by 3.sg.masc",
+        "Possession"
+    ],
+    "pssd": [
+        "Possessed",
+        "Possession"
+    ],
+    "pst": [
+        "Past",
+        "Tense"
+    ],
+    "purp": [
+        "General Purposive",
+        "Mood"
+    ],
+    "quot": [
+        "Quotative",
+        "Evidentiality"
+    ],
+    "rct": [
+        "Recent",
+        "Tense"
+    ],
+    "real": [
+        "Realis",
+        "Mood"
+    ],
+    "recp": [
+        "Reciprocal",
+        "Valency"
+    ],
+    "ref1": [
+        "First Person Reference Point",
+        "Deixis"
+    ],
+    "ref2": [
+        "Second Person Reference Point",
+        "Deixis"
+    ],
+    "refl": [
+        "Reflexive",
+        "Valency"
+    ],
+    "rel": [
+        "Relative",
+        "Case"
+    ],
+    "rem": [
+        "Distal",
+        "Case"
+    ],
+    "remt": [
+        "Remote",
+        "Deixis"
+    ],
+    "rl": [
+        "Relative",
+        "Comparison"
+    ],
+    "rmt": [
+        "Remote",
+        "Tense"
+    ],
+    "rprt": [
+        "Reported",
+        "Evidentiality"
+    ],
+    "sbjv": [
+        "Subjunctive",
+        "Mood"
+    ],
+    "semel": [
+        "Semelfactive",
+        "Aktionsart"
+    ],
+    "sen": [
+        "Sensory",
+        "Evidentiality"
+    ],
+    "seqma": [
+        "Sequential Multiclausal Aspect",
+        "Switch-Reference"
+    ],
+    "sg": [
+        "Singular",
+        "Number"
+    ],
+    "sim": [
+        "Simulative",
+        "Mood"
+    ],
+    "simma": [
+        "Simultaneous Multiclausal Aspect",
+        "Switch-Reference"
+    ],
+    "spec": [
+        "Specific",
+        "Definiteness"
+    ],
+    "sprl": [
+        "Superlative",
+        "Comparison"
+    ],
+    "ss": [
+        "SS",
+        "Switch-Reference"
+    ],
+    "ssadv": [
+        "SS Adverbial",
+        "Switch-Reference"
+    ],
+    "stat": [
+        "Stative",
+        "Aktionsart"
+    ],
+    "stelev": [
+        "High status, elevated",
+        "Politeness"
+    ],
+    "stsupr": [
+        "High status, supreme",
+        "Politeness"
+    ],
+    "sub": [
+        "Under",
+        "Case"
+    ],
+    "tel": [
+        "Telic",
+        "Aktionsart"
+    ],
+    "term": [
+        "Terminative",
+        "Case"
+    ],
+    "top": [
+        "Topic",
+        "Information Structure"
+    ],
+    "tr": [
+        "Transitive",
+        "Valency"
+    ],
+    "trans": [
+        "Translative",
+        "Case"
+    ],
+    "tri": [
+        "Trial",
+        "Number"
+    ],
+    "v": [
+        "Verb",
+        "Part of Speech"
+    ],
+    "v.cvb": [
+        "Converb",
+        "Part of Speech"
+    ],
+    "v.msdr": [
+        "Masdar",
+        "Part of Speech"
+    ],
+    "v.ptcp": [
+        "Participle",
+        "Part of Speech"
+    ],
+    "vers": [
+        "Versative",
+        "Case"
+    ],
+    "vis": [
+        "Visible",
+        "Deixis"
+    ],
+    "voc": [
+        "Vocative",
+        "Case"
+    ]
+}

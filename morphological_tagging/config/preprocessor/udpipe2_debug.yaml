@@ -1,0 +1,10 @@
+word_embeddings: True
+context_embeddings: True
+tokenizer: None
+language: English
+cache_location: ./morphological_tagging/data/pretrained_vectors
+lower_case_backup: False
+transformer_name: distilbert-base-multilingual-cased
+layer_pooling: average
+n_layers_pooling: 4
+wordpiece_pooling: first

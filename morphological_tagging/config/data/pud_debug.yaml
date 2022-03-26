@@ -1,0 +1,5 @@
+language: English
+treebank_name: PUD
+batch_first: False
+len_sorted: True
+batch_size: 32

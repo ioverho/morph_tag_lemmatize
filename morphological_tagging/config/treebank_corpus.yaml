@@ -1,0 +1,36 @@
+batch_size: 32
+language:
+  - English
+  - Arabic
+  - Czech
+  - Finnish
+  - French
+  - Russian
+  - Turkish
+treebank_name: merge
+batch_first: True
+quality_limit: 0.2
+include_family: False
+family_level: "sibling"
+source: "./morphological_tagging/data/um-treebanks-v2.9"
+
+# Naming convention
+# Is automatically handled if None is supplied
+#file_name: "Afro-Asiatic_${treebank_name}_${quality_limit}_${batch_first}.pickle"
+file_name: null
+
+# These are pretty much default values
+len_sorted: True
+max_chars: 2048
+max_tokens: 256
+remove_duplicates: True
+remove_unique_lemma_scripts: False
+return_tokens_raw: True
+
+hydra:
+  run:
+    dir: .
+  output_subdir: null
+  sweep:
+    dir: .
+    subdir: .

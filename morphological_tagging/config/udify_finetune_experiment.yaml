@@ -1,0 +1,35 @@
+defaults:
+  - default_train
+  - _self_
+
+experiment_name: UDIFY_finetune
+architecture: UDIFY_finetune
+
+seed: 610
+gpu: 1
+deterministic: False
+debug: False
+fdev_run: False
+
+model:
+  clf_lr: 4.0e-3
+  rnn_lr: 1.0e-3
+  optim_kwargs:
+    betas:
+      - 0.9
+      - 0.99
+    weight_decay: 1.0e-2
+  n_warmup_steps: 0.04
+
+data:
+  language: English
+  treebank_name: ATIS
+  batch_first: True
+  len_sorted: True
+  batch_size: 32
+  source: ./morphological_tagging/data/um-treebanks-v2.9
+
+trainer:
+  gradient_clip_val: 2
+  max_epochs: 50
+  num_sanity_val_steps: 0

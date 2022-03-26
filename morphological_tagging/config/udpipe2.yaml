@@ -1,0 +1,62 @@
+data:
+  language: English
+  treebank_name: merge
+  batch_first: False
+  len_sorted: True
+  batch_size: 16
+
+preprocess:
+  word_embeddings: True
+  context_embeddings: False
+  transformer_name: "bert-base-multilingual-uncased"
+  batch_size: 128
+
+model:
+  c2w_kwargs:
+    embedding_dim: 256
+    h_dim: 256
+    out_dim: 256
+    bidirectional: True
+    rnn_type: gru
+  w_embedding_dim: 512
+  word_rnn_kwargs:
+    h_dim: 512
+    bidirectional: True
+    rnn_type: lstm
+    num_layers: 3
+    residual: True
+  token_mask_p: 0.2
+  label_smoothing: 0.03
+  reg_loss_weight: 2
+  lr: 1.0e-3
+  betas:
+    - 0.9
+    - 0.99
+  scheduler_name: Step
+  scheduler_kwargs:
+    milestones:
+      - 40
+    gamma: 0.1
+
+trainer:
+  gradient_clip_val: 5
+  max_epochs: 60
+  precision: 16
+  num_sanity_val_steps: 0
+
+logging:
+  logger: tensorboard
+  logger_kwargs:
+    log_model: True
+    offline: False
+  monitor: valid_total_loss
+  monitor_mode: 'min'
+
+run:
+  experiment_name: UDPipe2
+  seed: 610
+  gpu: 1
+  deterministic: False
+  debug: False
+  fdev_run: False
+  prog_bar_refresh_rate: 100

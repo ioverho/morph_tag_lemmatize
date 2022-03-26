@@ -1,0 +1,28 @@
+print_hparams: False
+prog_bar_refresh_rate: 200
+
+monitor: valid/clf_agg
+monitor_mode: "max"
+save_checkpoints: True
+save_top_k: 0
+
+seed: 610
+gpu: 1
+deterministic: False
+debug: False
+fdev_run: False
+
+logging:
+  logger: wandb
+  logger_kwargs:
+    project: morph_tag_lemmatize
+    log_model: False
+    offline: False
+
+hydra:
+  run:
+    dir: .
+  output_subdir: null
+  sweep:
+    dir: .
+    subdir: .

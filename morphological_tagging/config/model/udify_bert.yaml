@@ -1,0 +1,22 @@
+defaults:
+  - udify_default
+  - _self_
+
+transformer_type: "bert"
+transformer_name: "bert-base-multilingual-cased"
+transformer_dropout: 0.25
+transformer_lrs:
+  0: 1.0e-5
+  1: 1.0e-5
+  2: 1.0e-5
+  3: 1.0e-5
+  4: 1.0e-5
+  5: 1.0e-5
+  6: 5.0e-5
+  7: 5.0e-5
+  8: 5.0e-5
+  9: 5.0e-5
+  10: 5.0e-5
+  11: 5.0e-5
+layer_attn_kwargs:
+  L: 12

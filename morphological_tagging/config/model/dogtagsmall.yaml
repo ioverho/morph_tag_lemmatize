@@ -1,0 +1,29 @@
+batch_first: True
+transformer_dropout: 0.2
+embedding_dropout: 0.5
+mha_kwargs:
+  n_heads: 16
+  dropout: 0.2
+label_smoothing: 0.03
+mask_p: 0.05
+transformer_lrs:
+  char_embeddings: 0.0
+  initial_char_encoder: 1.0e-5
+  chars_to_molecules: 1.0e-5
+  encoder: 5.0e-5
+  projection: 1.0e-4
+  final_char_encoder: 1.0e-4
+  pooler: 1.0e-4
+rnn_lr: 1.0e-3
+clf_lr: 1.0e-3
+optim_kwargs:
+  betas:
+    - 0.9
+    - 0.99
+  weight_decay: 1.0e-2
+scheduler_kwargs:
+  milestones:
+    - 40
+  gamma: 0.1
+unfreeze_transformer_epoch: 1
+n_warmup_steps: 0.04

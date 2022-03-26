@@ -1,0 +1,59 @@
+program: train_tagger.py
+method: random
+metric:
+  goal: maximize
+  name: valid/clf_agg
+parameters:
+  model.label_smoothing:
+    distribution: q_uniform
+    min: 0.0
+    max: 0.05
+    q: 0.01
+  preprocessor.transformer_dropout:
+    distribution: q_uniform
+    min: 0
+    max: 0.3
+    q: 0.1
+  model.c2w_kwargs.dropout:
+    distribution: q_uniform
+    min: 0.25
+    max: 0.75
+    q: 0.25
+  model.word_rnn_kwargs.dropout:
+    distribution: q_uniform
+    min: 0.25
+    max: 0.75
+    q: 0.25
+  model.token_mask_p:
+    distribution: q_uniform
+    min: 0
+    max: 0.3
+    q: 0.1
+  model.reg_loss_weight:
+    distribution: categorical
+    values:
+      - 0.5
+      - 1.0
+      - 2.0
+command:
+  - ${env}
+  - ${interpreter}
+  - ${program}
+  - "--config-name"
+  - "udpipe2_experiment"
+  - ++data.file_path=./morphological_tagging/data/corpora/English_merge_0.2_False.pickle
+  - experiment_name="UDPipe2 Sweep"
+  - data.treebank_name=merge
+  - data.batch_size=32
+  - preprocessor.language=English
+  - data.language=English
+  - ++trainer.max_epochs=10
+  - gpu= 1
+  - prog_bar_refresh_rate=200
+  - ++logging.logger_kwargs.job_type=English
+  - ++logging.logger_kwargs.notes="English sweep"
+  - ++print_hparams=True
+  - ++save_checkpoints=False
+  - hydra/job_logging=disabled
+  - hydra/hydra_logging=disabled
+  - ${args_no_hyphens}

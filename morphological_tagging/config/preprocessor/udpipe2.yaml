@@ -1,0 +1,10 @@
+word_embeddings: True
+context_embeddings: True
+tokenizer: None
+language: English
+lower_case_backup: False
+transformer_name: bert-base-multilingual-cased
+transformer_dropout: null
+layer_pooling: average
+n_layers_pooling: 4
+wordpiece_pooling: first

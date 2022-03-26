@@ -1,0 +1,16 @@
+defaults:
+  - udify_default
+  - _self_
+
+transformer_type: "distilbert"
+transformer_name: "distilbert-base-multilingual-cased"
+transformer_dropout: 0.25
+transformer_lrs:
+  0: 1.0e-5
+  1: 1.0e-5
+  2: 1.0e-5
+  3: 5.0e-5
+  4: 5.0e-5
+  5: 5.0e-5
+layer_attn_kwargs:
+  L: 6

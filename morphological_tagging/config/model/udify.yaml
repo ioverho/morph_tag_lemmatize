@@ -1,0 +1,40 @@
+transformer_type: "distilbert"
+transformer_name: "distilbert-base-multilingual-cased"
+transformer_dropout: 0.25
+c2w_kwargs:
+    embedding_dim: 256
+    h_dim: 384
+    bidirectional: True
+    out_dim: -1
+    batch_first: True
+    dropout: 0.25
+layer_attn_kwargs:
+  L: 6
+  dropout: 0.2
+rnn_kwargs:
+    input_size: 768
+    h_dim: 768
+    num_layers: 2
+    residual: True
+    dropout: 0.5
+    rnn_type: "lstm"
+    batch_first: True
+    bidirectional: True
+label_smoothing: 0.03
+mask_p: 0.25
+transformer_lrs:
+    0: 1.0e-5
+    1: 1.0e-5
+    2: 1.0e-5
+    3: 5.0e-5
+    4: 5.0e-5
+    5: 5.0e-5
+rnn_lr: 1.0e-3
+clf_lr: 4.0e-3
+n_warmup_steps: 8000
+optim_kwargs:
+  betas:
+    - 0.9
+    - 0.99
+  weight_decay: 1.0e-2
+unfreeze_transformer_epoch: 1
