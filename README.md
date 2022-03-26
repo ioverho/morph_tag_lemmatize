@@ -32,7 +32,7 @@
   - [UDPipe2](#udpipe2)
     - [Training](#training)
     - [Evaluating](#evaluating)
-    - [Pipeline Creation, Loading & Usage](#pipeline-creation-loading--usage)
+    - [Pipelines](#pipelines)
 - [References](#references)
 
 # Introduction
@@ -43,11 +43,12 @@
 
 # Models
 
-All pre-trained models in pipeline format (including dictionaries to allow mapping from raw text to input and output to processed text) can be found (TODO: add link).
+All pre-trained models in pipeline format (including dictionaries to allow mapping from raw text to input and output to processed text) can be found in the Google Drive folder [here](https://drive.google.com/drive/u/0/folders/1O0NZgyjkiuWQ9FuqZpsgFII2j8487Mct).
 
-An early design choice was to opt for seq-first for UDPipe2, but batch-first for others. This make dataset files incompatible between models, unfortunately.
+An early design choice was to opt for seq-first batching for UDPipe2, but batch-first for others. This make dataset files incompatible between models, unfortunately.
 
-Generally, for deep learning experiments no reproduction is exact, and this project is no exception. Differences are detailed for each model in their respective section, ordered by expected impact (largest to smallest).
+Generally, for deep learning experiments no reproduction is exact, and this project is no exception. Differences are detailed for each model in their respective section, ordered by expected impact (largest to smallest). Furthermore, test set performance is reported.
+
 ## UDPipe2
 
 <p align="center">
@@ -81,6 +82,8 @@ For more information, see the [dedicated website](https://ufal.mff.cuni.cz/udpip
 | Russian | 0.97 +- 4.05e-04 | 0.06 +- 9.90e-04 | 0.92 +- 6.40e-04  | 0.97/0.88       |         2759.4  |
 | Turkish | 0.91 +- 1.21e-03 | 0.19 +- 3.13e-03 | 0.77 +- 1.80e-03  | 0.89/0.58       |         1828.43 |
 
+*Tokens per second* measured using a NVIDIA GTX 1080Ti GPU, with batches of 2048 tokens.
+
 </p>
 </details>
 
@@ -103,10 +106,12 @@ To train UDPipe2 from scratch, run:
 python -u train_tagger.py --config-name udpipe2_experiment hydra/job_logging=disabled hydra/hydra_logging=disabled
 ```
 
+Models are saved to the checkpoints directory.
+
 Hydra's override syntax can be used to alter practically any aspect of training.
 
 <details>
-<summary>Arguments</summary>
+<summary><b>Arguments</b></summary>
 <p>The [default config file](./config/udpipe2_experiment) post-processing looks like:
 
 ```yaml
@@ -239,7 +244,6 @@ The `trainer` key specifies keyword arguments for a PyTorch-Lightning trainer. F
 
 </p>
 </details>
-Models are saved to the checkpoints directory.
 
 ### Evaluating
 
@@ -253,7 +257,7 @@ It will automatically search for the most recent version of UDPipe2 model availa
 
 The eval files will be stored in `./eval`. These can be read and analyzed in the [evaluation notebook](./evaluation.ipynb)
 
-### Pipeline Creation, Loading & Usage
+### Pipelines
 
 
 
