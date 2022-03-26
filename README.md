@@ -26,20 +26,26 @@
 </a>
 </p>
 
-- [Introduction](#introduction)
-- [Datasets](#datasets)
-- [Models](#models)
-  - [UDPipe2](#udpipe2)
-    - [Training](#training)
-    - [Evaluating](#evaluating)
-    - [Pipelines](#pipelines)
-- [References](#references)
+This repo holds a collection of utilities and scripts for building CONLL/Unimorph datasets, training joint morphological taggers and lemmatizers, evaluating trained models and converting models into performant pre-processing pipelines.
 
-# Introduction
+We needed SoTA morphological taggers for text in context, applicable to many languages. Unfortunately, little additional research has been performed since the [2019 SIGMORPHON/CONLL Shared Task 2](https://sigmorphon.github.io/sharedtasks/2019/task2/)<sup>[1](#sharedtask2019)</sup>, and existing implementations used outdated datasets or suboptimal tagging schemas. This repo instead allows for extending those implementations to the latest [UD treebanks](https://universaldependencies.org/#language-) and the UNIMORPH tagging schema, all within PyTorch and PyTorch Lightning code. We hope this repo will make this NLP task easier to tackle for downstream tasks and help push the SoTA further for morphologically complex languages.
+
+<!--
+### Contents
+
+1. **Environment:**
+2. **Datasets:**
+3. **Models:**
+4. **References:** cited papers useful for further reading
+-->
+
+# Environment
+
+Lorem ipsum, dolor sit amet.
 
 # Datasets
 
-
+Lorem ipsum, dolor sit amet.
 
 # Models
 
@@ -298,8 +304,10 @@ pipeline(Tuple[Union[List, torch.Tensor]], is_batch_input=True)
 
 # References
 
-<a name="udpipe2conll">1</a>: Straka, M. (2018, October). UDPipe 2.0 prototype at CoNLL 2018 UD shared task. In Proceedings of the CoNLL 2018 Shared Task: Multilingual Parsing from Raw Text to Universal Dependencies (pp. 197-207).
+<a name="sharedtask2019"></a> McCarthy, A. D., Vylomova, E., Wu, S., Malaviya, C., Wolf-Sonkin, L., Nicolai, G., Kirov, C., Silfverberg, M., Mielke, S. J., Heinz, J., Cotterell, R. & Hulden, M. (2019). The SIGMORPHON 2019 shared task: Morphological analysis in context and cross-lingual transfer for inflection. arXiv preprint arXiv:1910.11493.
 
-<a name="UDPipe2SIGMORPHON">1</a>: Straka, M., Straková, J., & Hajič, J. (2019). UDPipe at SIGMORPHON 2019: Contextualized embeddings, regularization with morphological categories, corpora merging. arXiv preprint arXiv:1908.06931.
+<a name="udpipe2conll"></a> Straka, M. (2018, October). UDPipe 2.0 prototype at CoNLL 2018 UD shared task. In Proceedings of the CoNLL 2018 Shared Task: Multilingual Parsing from Raw Text to Universal Dependencies (pp. 197-207).
 
-<a name="UDPipe2EvaLatin">1</a>: Straka, M., & Straková, J. (2020). UDPipe at EvaLatin 2020: Contextualized embeddings and treebank embeddings. arXiv preprint arXiv:2006.03687.
+<a name="UDPipe2SIGMORPHON"></a> Straka, M., Straková, J., & Hajič, J. (2019). UDPipe at SIGMORPHON 2019: Contextualized embeddings, regularization with morphological categories, corpora merging. arXiv preprint arXiv:1908.06931.
+
+<a name="UDPipe2EvaLatin"></a> Straka, M., & Straková, J. (2020). UDPipe at EvaLatin 2020: Contextualized embeddings and treebank embeddings. arXiv preprint arXiv:2006.03687.
