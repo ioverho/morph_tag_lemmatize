@@ -119,8 +119,7 @@ klad*.*
 */data/*/
 /misc
 .*cache
-/checkpoints/
-*/checkpoints/
+*/checkpoints/*
 /msc_thesis
 *.tmp
 *.pt
@@ -133,3 +132,6 @@ vscode/
 *.pickle
 /maml_test/*
 maml_test.ipynb
+*/pipelines/*.ckpt
+*/data/corpora/*.pickle
+./scrape_treebank_metadata.py
