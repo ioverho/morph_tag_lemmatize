@@ -17,6 +17,9 @@ CORPORA_LOC = "./nmt_adapt/data/corpora/"
 
 def tag_file(args):
 
+    for format in args.output_format:
+        assert  format in {"single_pickle_file", "separate_text_files", "single_jsonlines_file"}, f"Output format {format} not recognized."
+
     timer = Timer()
 
     print(f"\n{timer.time()} | SETUP")
@@ -87,42 +90,43 @@ def tag_file(args):
 
     print(f"\n{timer.time()} | WRITING FILE(S)")
 
-    if args.output_format == "single_pickle_file":
-        out_fp = Path(args.file_path).parent / (Path(args.file_path).stem + "_tagged.pickle")
-        print(f"Saving to: {out_fp}")
-        with open(out_fp, "w", encoding="utf-8" if args.encoding is None else args.encoding) as f:
-            pickle.dump(tag_results, fp=f)
-
-    elif args.output_format == "separate_text_files":
-
-        for k in tag_results.keys():
-            out_fp = Path(args.file_path).parent / (Path(args.file_path).stem + f"_{k}.txt")
+    for format in args.output_format:
+        if format == "single_pickle_file":
+            out_fp = Path(args.file_path).parent / (Path(args.file_path).stem + "_tagged.pickle")
             print(f"Saving to: {out_fp}")
-            lines_ = [" ".join(seq) + "\n" for seq in tag_results[k]]
             with open(out_fp, "w", encoding="utf-8" if args.encoding is None else args.encoding) as f:
-                f.writelines(lines_)
+                pickle.dump(tag_results, fp=f)
 
-    elif args.output_format == "single_jsonlines_file":
+        if format == "separate_text_files":
 
-        import jsonlines
+            for k in tag_results.keys():
+                out_fp = Path(args.file_path).parent / (Path(args.file_path).stem + f"_{k}.txt")
+                print(f"Saving to: {out_fp}")
+                lines_ = [" ".join(seq) + "\n" for seq in tag_results[k]]
+                with open(out_fp, "w", encoding="utf-8" if args.encoding is None else args.encoding) as f:
+                    f.writelines(lines_)
 
-        tag_results = [
-            {
-                "lemma": lemma,
-                "lemma_script": lemma_script,
-                "morph_tag": morph_tag,
-                "morph_cat": morph_cat
-                } for lemma, lemma_script, morph_tag, morph_cat in zip(
-                tag_results["lemmas"],
-                tag_results["lemma_scripts"],
-                tag_results["morph_tags"],
-                tag_results["morph_cats"])
-                ]
+        if format == "single_jsonlines_file":
 
-        out_fp = Path(args.file_path).parent / (Path(args.file_path).stem + f"_tagged.jsonl")
-        print(f"Saving to: {out_fp}")
-        with jsonlines.open(out_fp, mode='w') as writer:
-            writer.write(tag_results)
+            import jsonlines
+
+            tag_results_ = [
+                {
+                    "lemma": lemma,
+                    "lemma_script": lemma_script,
+                    "morph_tag": morph_tag,
+                    "morph_cat": morph_cat
+                    } for lemma, lemma_script, morph_tag, morph_cat in zip(
+                    tag_results["lemmas"],
+                    tag_results["lemma_scripts"],
+                    tag_results["morph_tags"],
+                    tag_results["morph_cats"])
+                    ]
+
+            out_fp = Path(args.file_path).parent / (Path(args.file_path).stem + f"_tagged.jsonl")
+            print(f"Saving to: {out_fp}")
+            with jsonlines.open(out_fp, mode='w') as writer:
+                writer.write(tag_results_)
 
     timer.end()
 
@@ -169,7 +173,9 @@ if __name__ == "__main__":
     parser.add_argument(
         '--output_format',
         type=str,
+        nargs="+",
         choices=["single_pickle_file", "separate_text_files", "single_jsonlines_file"],
+        default="separate_text_files",
         help="output format"
         )
 
