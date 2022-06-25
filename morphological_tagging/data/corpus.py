@@ -25,7 +25,7 @@ from morphological_tagging.data.dataloaders import TokenDataloader
 from morphological_tagging.data.lemma_script import LemmaScriptGenerator
 
 
-BASEPATH = "./morphological_tagging/data/sigmorphon_2019"
+BASEPATH = "./morphological_tagging/data/sigmorphon_2019/task2"
 
 ALL_TAGS_FP = "./morphological_tagging/data/uni_morph_tags.json"
 
@@ -717,6 +717,24 @@ class DocumentCorpus(Dataset):
                     return 0
             except ValueError:
                 return 0
+
+    def lemma_tags_overview(self, n: int = 11) -> pd.DataFrame:
+        """Get the most common lemma scripts and some examples.
+
+        Args:
+            n (int, optional): number of scripts to show. Defaults to 11.
+        """
+
+        most_common_rules = [
+            [script, count] for script, count in self.script_counter.most_common(n)
+        ]
+
+        for entry in most_common_rules:
+            entry.append(self.script_examples[entry[0]])
+
+        df = pd.DataFrame(most_common_rules, columns=["Rule", "Count", "Examples"])
+
+        return df
 
 
 class TreebankDataModule(pl.LightningDataModule):

@@ -7,7 +7,7 @@ import pickle
 
 import torch
 
-from morphological_tagging.pipelines import UDPipe2Pipeline
+from morphological_tagging.pipelines import UDPipe2Pipeline, DogTagPipeline
 from utils.tokenizers import MosesTokenizerWrapped
 from utils.experiment import Timer, progressbar
 
@@ -32,16 +32,17 @@ def tag_file(args):
     )
 
     print(f"\n{timer.time()} | MODEL IMPORT")
-    if args.pipeline is None:
-        expected_pipeline_path = (
-            f"./morphological_tagging/pipelines/UDPipe2_{args.language}_merge.ckpt"
-        )
-        print(f"Looking for pipeline in {expected_pipeline_path}")
-    else:
-        expected_pipeline_path = f"./morphological_tagging/pipelines/UDPipe2_{args.language}_merge.ckpt"
-        print(f"Looking for pipeline in {expected_pipeline_path}")
+    expected_pipeline_path = f"./morphological_tagging/pipelines/{args.pipeline}_{args.language}_merge.ckpt"
+    print(f"Looking for pipeline in {expected_pipeline_path}")
 
-    pipeline = UDPipe2Pipeline.load(expected_pipeline_path)
+    if "udpipe" in args.pipeline.lower():
+        pipeline = UDPipe2Pipeline.load(expected_pipeline_path)
+
+    elif "dogtag" in args.pipeline.lower():
+        pipeline = DogTagPipeline.load(expected_pipeline_path)
+
+    else:
+        raise ValueError(f"Architecture cannot be inferred from {args.pipeline}. 'udpipe' or 'dogtag' must be included.")
 
     pipeline.tagger.eval()
     for param in pipeline.parameters():
@@ -94,8 +95,8 @@ def tag_file(args):
         if format == "single_pickle_file":
             out_fp = Path(args.file_path).parent / (Path(args.file_path).stem + "_tagged.pickle")
             print(f"Saving to: {out_fp}")
-            with open(out_fp, "w", encoding="utf-8" if args.encoding is None else args.encoding) as f:
-                pickle.dump(tag_results, fp=f)
+            with open(out_fp, "wb") as f:
+                pickle.dump(tag_results, file=f)
 
         if format == "separate_text_files":
 
@@ -150,6 +151,7 @@ if __name__ == "__main__":
         )
     parser.add_argument(
         '--pipeline',
+        default="UDPipe2",
         type=str,
         help="pipeline checkpoint name in './pipelines'"
     )
@@ -175,7 +177,7 @@ if __name__ == "__main__":
         type=str,
         nargs="+",
         choices=["single_pickle_file", "separate_text_files", "single_jsonlines_file"],
-        default="separate_text_files",
+        default=["separate_text_files"],
         help="output format"
         )
 

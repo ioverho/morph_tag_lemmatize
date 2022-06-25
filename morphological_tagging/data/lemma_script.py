@@ -56,7 +56,7 @@ class LemmaScriptGenerator:
         """A Myer's diff algorithm implementation.
 
         Taken from:
-        Amar, B. myersdiff, (2020), GitHub repository, https://github.com/amar-b/myersdiff, commit 68bacb370e292cc2b3b0c009250182be4aaffac2
+        B., Amar, myersdiff, (2020), GitHub repository, https://github.com/amar-b/myersdiff, commit 68bacb370e292cc2b3b0c009250182be4aaffac2
 
         Inspired by:
         Coglan, James, The Myers diff algorithm: part 1 (2017). The If Works, https://blog.jcoglan.com/2017/02/12/the-myers-diff-algorithm-part-1/
