@@ -28,16 +28,15 @@
 </a>
 </p>
 
-**New**
-> Focus on out-of-the-box pipelines
-> New SoTA DogTag models implemented
-> Script to automate tagging with CLI
+> **New**
+> 1. Focus on out-of-the-box pipelines
+> 2. New SoTA DogTag models implemented
+> 3. Script to automate tagging with CLI
 
-**To Do**
-
-- [ ] Add UDIFY
-- [ ] Add evaluation details
-- [x] Add DogTag
+> **To Do**
+> 1. Add UDIFY
+> 2. Add evaluation details
+> 3. Add DogTag training details
 
 This repo holds a collection of utilities and scripts for building CoNLL/UniMorph corpora, training joint morphological taggers and lemmatizers, evaluating trained models and converting models into performant pipelines.
 
