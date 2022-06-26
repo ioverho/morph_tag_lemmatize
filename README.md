@@ -57,8 +57,8 @@ To install the minimal dependencies use pre-defined pipelines in Python:
 
 ```bash
 pip install numpy==1.22.0
-pip install pytorch=1.10.0
-pip install torchtext=0.11.0
+pip install pytorch==1.10.0
+pip install torchtext==0.11.0
 pip install transformers==4.12.5
 ```
 
@@ -94,7 +94,7 @@ python tag_file.py --file_path {$FILE_TO_TAG} --language {$LANGUAGE} --gpu 0
 ```
 
 Additional command line options include:
-```bash
+```txt
   --file_path FILE_PATH   the location of the text file
   --language LANGUAGE     the language of the text
   --pipeline PIPELINE     pipeline checkpoint name in './pipelines', must contain architecture
