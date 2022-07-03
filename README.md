@@ -2,8 +2,6 @@
   Morphological Tagging and Lemmatization in Context
 </h1>
 
-<h4 align="center">MSc AI Thesis @ University of Amsterdam</h4>
-
 <p align="center">
 <!--
 <a href="https://www.notion.so/MSc-AI-Thesis-9c3ba8027f6b4e3a82f0e391a6db76a9">
@@ -26,6 +24,7 @@
     style="float: center;"
     />
 </a>
+<h4 align="center">MSc AI Thesis @ University of Amsterdam</h4>
 </p>
 
 > **New**
@@ -38,9 +37,11 @@
 > 2. Add evaluation details
 > 3. Add DogTag training details
 
+This project has been supported by the European Union's Horizon 2020 research and innovation programme under grant agreement No 825299 ([GoURMET](https://gourmet-project.eu/)). <img src="./misc/figures/EU_flag.jpg" width="40px" style="vertical-align:middle">
+
 This repo holds a collection of utilities and scripts for building CoNLL/UniMorph corpora, training joint morphological taggers and lemmatizers, evaluating trained models and converting models into performant pipelines.
 
-For a downstream task, we needed SoTA morphological taggers for text in context, applicable to many languages. Unfortunately, little additional research has been performed since the [2019 SIGMORPHON/CONLL Shared Task 2](https://sigmorphon.github.io/sharedtasks/2019/task2/)<sup>[1](#sharedtask2019)</sup>, and existing implementations use outdated datasets or suboptimal tagging schemas. This repo instead allows for extending those implementations to the latest [UD treebanks](https://universaldependencies.org/#language-) and the the UniMorph tagging schema<sup>[2](#unimorphschema)</sup>, all within PyTorch and PyTorch Lightning.
+For a downstream task, we needed SoTA morphological taggers for text in context, applicable to many languages. Unfortunately, little additional research has been performed since the [2019 SIGMORPHON/CONLL Shared Task 2](https://sigmorphon.github.io/sharedtasks/2019/task2/)<sup>[[1]](#sharedtask2019)</sup>, and existing implementations use outdated datasets or suboptimal tagging schemas. This repo instead allows for extending those implementations to the latest [UD treebanks](https://universaldependencies.org/#language-) and the the UniMorph tagging schema<sup>[[2]](#unimorphschema)</sup>, all within PyTorch and PyTorch Lightning.
 
 <!--
 ### Contents
@@ -82,8 +83,22 @@ Pipelines were designed to contain all logic necessary for tokenization, collati
 
 Currently implemented pipelines:
 
-1. [UFAL Prague](https://github.com/ufal/udpipe/tree/udpipe-2)'s [UDPipe2](https://drive.google.com/drive/u/0/folders/1inRcHXtjqzVFYa7zzB2HMhoKaPwEcQlv)<sup>[4](#udpipe2conll)</sup><sup>[5](#UDPipe2SIGMORPHON)</sup><sup>[6](#UDPipe2EvaLatin)</sup>
-2. Our own [CANINE](https://huggingface.co/google/canine-s)<sup>[7](#canine)</sup> based [DogTag](?)
+1. [UFAL Prague](https://github.com/ufal/udpipe/tree/udpipe-2)'s UDPipe2<sup>[[4](#udpipe2conll), [5](#UDPipe2SIGMORPHON), [6](#UDPipe2EvaLatin)]</sup>
+2. Our own [CANINE](https://huggingface.co/google/canine-s)<sup>[[7](#canine)]</sup> based [DogTag](?)
+
+<details>
+<summary><b>When to use what</b></summary>
+<p>
+Currently, both UDPipe2 and DogTag perform roughly the same. UDPipe2 is a better morphological tagger for higher resource languages and DogTag seems to be better at both lemmatizing and tagging for low resource languages (Finnish, Turkish). Since the difference is more pronounced for the latter, and a bit of vanity, DogTag should be the default.
+
+In case memory or speed constraints are in place:
+
+1. **Memory**: UDPipe requires loading in both word and contextual (i.e. a BERT variant) embeddings. These dominate memory used. DogTag requires only loading in a smaller transformer, CANINE. For both file and RAM usage, DogTag is significantly slimmer (~1.5 GB).
+2. **Inference Speed**: CANINE operates at the character level, resulting in far larger input strings. As such, it is quite a bit faster at equal batch sizes than DogTag.
+3. **Training Speed**: UDPipe requires finetuning a relatively small number of parameters on top of a lot of pre-trained modules. Training is *much* faster than other implemented models.
+
+</p>
+</details>
 
 ## Command-line Interface
 
