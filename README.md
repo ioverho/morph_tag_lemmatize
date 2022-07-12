@@ -37,7 +37,7 @@
 > 2. Add evaluation details
 > 3. Add DogTag training details
 
-This project has been supported by the European Union's Horizon 2020 research and innovation programme under grant agreement No 825299 ([GoURMET](https://gourmet-project.eu/)). <img src="./misc/figures/EU_flag.jpg" width="40px" style="vertical-align:middle">
+This project has been supported by the European Union's Horizon 2020 research and innovation programme under grant agreement No 825299 ([GoURMET](https://gourmet-project.eu/)). <img src="./misc/figures/EU_flag.jpg" width="40px">
 
 This repo holds a collection of utilities and scripts for building CoNLL/UniMorph corpora, training joint morphological taggers and lemmatizers, evaluating trained models and converting models into performant pipelines.
 
