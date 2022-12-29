@@ -133,3 +133,4 @@ maml_test.ipynb
 */pipelines/*.ckpt
 */data/corpora/*.pickle
 ./scrape_treebank_metadata.py
+./vscode/*
