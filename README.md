@@ -28,13 +28,14 @@
 </p>
 
 > **New**
-> 1. Focus on out-of-the-box pipelines
-> 2. New SoTA DogTag models implemented
-> 3. Script to automate tagging with CLI
+  >1. UDIFY models added
+> 2. Focus on out-of-the-box pipelines
+> 3. DogTag models implemented
+> 4. Script to automate tagging with CLI
 
 > **To Do**
-> 1. Add UDIFY
-> 2. Add evaluation details
+> 1. Add evaluation details
+> 2. Add UDIFY training details
 > 3. Add DogTag training details
 
 This project has been supported by the European Union's Horizon 2020 research and innovation programme under grant agreement No 825299 ([GoURMET](https://gourmet-project.eu/)). <img src="./misc/figures/eu_flag.jpg" width="40px" style="vertical-align:middle">
@@ -72,7 +73,7 @@ pip install sacremoses==0.0.49
 For all other functionalities, you can use the provided environment. This is quite heavy, building a full modern deep learning environment (including [PyTorch Lightning](https://pytorch-lightning.readthedocs.io/en/latest/), [Weights and Biases](https://docs.wandb.ai/ref/python), [Hydra](https://hydra.cc/docs/intro/), etc.):
 
 ```bash
-conda env create -f env.yml
+conda env create -f env.yaml
 ```
 
 Tested on Windows 11 and Debian Linux-4.19.0.
