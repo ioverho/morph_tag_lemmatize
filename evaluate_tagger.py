@@ -8,14 +8,15 @@ import torch
 import numpy as np
 import nltk
 from nltk.metrics.distance import edit_distance
+from utils.errors import ConfigurationError
 
 from utils.experiment import progressbar, Timer
 from morphological_tagging.data.lemma_script import apply_lemma_script
 from morphological_tagging.data.corpus import TreebankDataModule
-from morphological_tagging.pipelines import UDPipe2Pipeline
+from morphological_tagging.pipelines import DogTagPipeline, UDIFYPipeline, UDPipe2Pipeline
 from morphological_tagging.metrics import RunningStats
 
-EVAL_PATH = Path("./morphological_tagging/eval")
+EVAL_PATH = Path("./eval")
 CORPORA_PATH = Path("./morphological_tagging/data/corpora")
 CHECKPOINT_PATH = Path("./morphological_tagging/checkpoints")
 
@@ -52,6 +53,9 @@ def eval(config):
 
     data_module = TreebankDataModule.load(expected_dataset_path)
 
+    train_tokens_vocab = set(data_module.train_corpus.dataset.token_vocab.get_stoi().keys())
+    train_lemmas_vocab = {lemma for i in data_module.corpus.splits["train"] for lemma in data_module.corpus[i].lemmas}
+
     # ==========================================================================
     # Model Import
     # ==========================================================================
@@ -86,6 +90,7 @@ def eval(config):
         print(f"Found model at {match}")
 
     if config["model_name"].lower() == "udpipe2":
+        model_name = 0
         pipeline = UDPipe2Pipeline()
 
         pipeline.load_vocabs_from_treebankdatamodule_checkpoint(expected_dataset_path)
@@ -93,8 +98,26 @@ def eval(config):
 
         pipeline = pipeline.to(device)
 
-    elif config["model_name"].lower() == "udify":
-        raise NotImplementedError()
+    elif "dogtag" in config["model_name"].lower():
+        model_name = 1
+        pipeline = DogTagPipeline()
+
+        pipeline.load_vocabs_from_treebankdatamodule_checkpoint(expected_dataset_path)
+        pipeline.load_tagger(str(match), map_location=device)
+
+        pipeline = pipeline.to(device)
+
+    elif "udify" in config["model_name"].lower():
+        model_name = 2
+        pipeline = UDIFYPipeline()
+
+        pipeline.load_vocabs_from_treebankdatamodule_checkpoint(expected_dataset_path)
+        pipeline.load_tagger(str(match), map_location=device)
+
+        pipeline = pipeline.to(device)
+
+    else:
+        raise ConfigurationError(f"Model name {config['model_name']} not recgnized")
 
     # ==========================================================================
     # Eval File
@@ -134,12 +157,57 @@ def eval(config):
             for tok_seq in tokens:
                 n_tokens += len(tok_seq)
 
-            ls_preds_ids, mt_preds_ = pipeline.predict(
-                batch[0], batch[1], batch[2], batch[3], batch[4]
-            )
-            lemmas, lemma_scripts, morph_tags, morph_cats = pipeline.preds_to_text(
-                tokens, ls_preds_ids, mt_preds_
-            )
+            if model_name == 0:
+                ls_preds_ids, mt_preds_ = pipeline.predict(
+                    batch[0], batch[1], batch[2], batch[3], batch[4]
+                )
+                lemmas, lemma_scripts, morph_tags, morph_cats = pipeline.preds_to_text(
+                    tokens, ls_preds_ids, mt_preds_
+                )
+
+                ls_preds_ids = ls_preds_ids.detach().cpu().permute(1, 0).numpy()
+                mt_preds_ = mt_preds_.detach().cpu().permute(1, 0, 2).numpy()
+                mt_gts_ = batch[7].permute(1, 0, 2).numpy()
+
+                ls_gts = [
+                    [pipeline.id_to_lemma_script[ls] for ls in ls_seq]
+                    for ls_seq in batch[6].permute(1, 0).numpy()
+                ]
+
+            elif model_name == 1:
+
+                ls_preds_ids, mt_preds_ = pipeline.predict(batch[3])
+
+                lemmas, lemma_scripts, morph_tags, morph_cats = pipeline.preds_to_text(
+                    tokens, ls_preds_ids, mt_preds_
+                )
+
+                ls_preds_ids = ls_preds_ids.detach().cpu().numpy()
+                mt_preds_ = mt_preds_.detach().cpu().numpy()
+                mt_gts_ = batch[7].numpy()
+
+                ls_gts = [
+                    [pipeline.id_to_lemma_script[ls] for ls in ls_seq]
+                    for ls_seq in batch[6].numpy()
+                ]
+
+            elif model_name == 2:
+
+                ls_preds_ids, mt_preds_ = pipeline.predict(
+                    batch[0], batch[1], batch[2], batch[3]
+                )
+                lemmas, lemma_scripts, morph_tags, morph_cats = pipeline.preds_to_text(
+                    tokens, ls_preds_ids, mt_preds_
+                )
+
+                ls_preds_ids = ls_preds_ids.detach().cpu().numpy()
+                mt_preds_ = mt_preds_.detach().cpu().numpy()
+                mt_gts_ = batch[7].numpy()
+
+                ls_gts = [
+                    [pipeline.id_to_lemma_script[ls] for ls in ls_seq]
+                    for ls_seq in batch[6].numpy()
+                ]
 
             for i in range(len(tokens)):
                 assert (
@@ -150,15 +218,6 @@ def eval(config):
                     == len(morph_cats[i])
                 )
 
-            ls_preds_ids = ls_preds_ids.detach().cpu().permute(1, 0).numpy()
-            mt_preds_ = mt_preds_.detach().cpu().permute(1, 0, 2).numpy()
-
-            ls_gts = [
-                [pipeline.id_to_lemma_script[ls] for ls in ls_seq]
-                for ls_seq in batch[6].permute(1, 0).numpy()
-            ]
-
-            mt_gts_ = batch[7].permute(1, 0, 2).numpy()
             mt_gts = [
                 [
                     set(pipeline.id_to_morph_tag[mt] for mt in np.where(mt_gt)[0])
@@ -221,7 +280,17 @@ def eval(config):
                     morph_rel += mt_gt_
 
                     pickle.dump(
-                        (token, lm_gt, lm_pred, ls_gt, ls_pred, mt_gt, mt_pred,), f,
+                        (
+                            token,
+                            lm_gt,
+                            lm_pred,
+                            ls_gt,
+                            ls_pred,
+                            mt_gt,
+                            mt_pred,
+                            token in train_tokens_vocab,
+                            lm_gt in train_lemmas_vocab
+                            ), f,
                     )
 
         token_rate = n_tokens / timer2.time().seconds
@@ -287,7 +356,7 @@ def eval(config):
 
     pipeline = pipeline.to("cpu")
     pipeline.save(
-        f"./morphological_tagging/pipelines/{config['model_name']}_{config['dataset_name']}.ckpt"
+        f"./pipelines/{config['model_name']}_{config['dataset_name']}.ckpt"
     )
 
     print(f"\n{timer.time()} | FINISHED")

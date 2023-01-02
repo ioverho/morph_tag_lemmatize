@@ -2078,7 +2078,7 @@ class DogTag(JointTaggerLemmatizer):
             self.morph_fac_clf,
         ]
 
-        if self.transformer_lrs is not None:
+        if self.transformer_lrs is None:
             return reg_params
 
         else:
@@ -2126,6 +2126,7 @@ class DogTag(JointTaggerLemmatizer):
                     {"scheduler": rest_scheduler, "interval": "step"},
                 ],
             )
+
         else:
             return (
                 [rest_optimizer],
@@ -2407,3 +2408,37 @@ class DogTag(JointTaggerLemmatizer):
         self.metrics("test", losses, lemma_logits, lemma_tags, morph_logits, morph_tags)
 
         return loss
+
+class DogTagFineTune(DogTag):
+
+    def __init__(
+        self,
+        file_path: str,
+        device = torch.device("cpu"),
+        **dogtag_kwargs,
+    ) -> None:
+
+        self.save_hyperparameters()
+
+        # Load in pre-trained model
+        self.file_path = file_path
+
+        state_dict = torch.load(self.file_path, map_location=device)
+
+        self.hyper_params = state_dict["hyper_parameters"]
+        self.hyper_params["transformer_lrs"] = None
+        self.hyper_params.update(**dogtag_kwargs)
+
+        pruned_state_dict = OrderedDict([(k, v ) for k, v in state_dict["state_dict"].items() if "transformer" in k])
+
+        super().__init__(**state_dict["hyper_parameters"])
+
+        self.load_state_dict(pruned_state_dict, strict=False)
+
+        # Freeze the transformer
+        for param in self.transformer.parameters():
+            param.requires_grad = False
+
+        for mod in self._trainable_modules():
+            for param in mod.parameters():
+                param.requires_grad = True

@@ -1,4 +1,6 @@
 batch_size: 32
+# Languages to include
+# Typically only only is used
 language:
   - English
   - Arabic
@@ -7,11 +9,18 @@ language:
   - French
   - Russian
   - Turkish
+# Specific treebank to use. If `merge`, uses all that meet criteria
 treebank_name: merge
+# Batch or sequence dimension first
 batch_first: True
+# Minimum quality of each dataset to merge, i.e. 1/5 stars
 quality_limit: 0.2
+# Include languages from the same typological family
 include_family: False
+# Include languages from the same typological family, or
+# if not enough data, from the same group (e.g. all siblings, or all descendants of parents)
 family_level: "sibling"
+# Location of raw data
 source: "./morphological_tagging/data/um-treebanks-v2.9"
 
 # Naming convention

@@ -7,9 +7,10 @@ import pickle
 
 import torch
 
-from morphological_tagging.pipelines import UDPipe2Pipeline, DogTagPipeline
+from morphological_tagging.pipelines import UDPipe2Pipeline, DogTagPipeline, UDIFYPipeline
 from utils.tokenizers import MosesTokenizerWrapped
 from utils.experiment import Timer, progressbar
+from utils.errors import ConfigurationError
 
 os.environ["CUDA_LAUNCH_BLOCKING"] = "1"
 
@@ -32,8 +33,17 @@ def tag_file(args):
     )
 
     print(f"\n{timer.time()} | MODEL IMPORT")
-    expected_pipeline_path = f"./morphological_tagging/pipelines/{args.pipeline}_{args.language}_merge.ckpt"
-    print(f"Looking for pipeline in {expected_pipeline_path}")
+    pipeline_dir = Path(args.pipeline_dir)
+
+    if not pipeline_dir.exists():
+        raise ConfigurationError(f"`pipeline_dir` ({args.pipeline_dir}) must be a directory")
+
+    expected_pipeline_path = pipeline_dir / f"{args.pipeline}_{args.language}_merge.ckpt"
+
+    if not expected_pipeline_path.exists():
+        raise ConfigurationError(f"Pipeline path ({expected_pipeline_path}) does not exist")
+    else:
+        print(f"Found pipeline in {expected_pipeline_path}")
 
     if "udpipe" in args.pipeline.lower():
         pipeline = UDPipe2Pipeline.load(expected_pipeline_path)
@@ -41,14 +51,19 @@ def tag_file(args):
     elif "dogtag" in args.pipeline.lower():
         pipeline = DogTagPipeline.load(expected_pipeline_path)
 
+    elif "udify" in args.pipeline.lower():
+        pipeline = UDIFYPipeline.load(expected_pipeline_path)
+
     else:
         raise ValueError(f"Architecture cannot be inferred from {args.pipeline}. 'udpipe' or 'dogtag' must be included.")
 
+    # *Really* make sure the pipeline is in eval mode
     pipeline.tagger.eval()
     for param in pipeline.parameters():
         param.requires_grad = False
     pipeline = pipeline.to(device)
 
+    # TODO (ivo): add tokenizer options
     pipeline.add_tokenizer(MosesTokenizerWrapped(lang=args.language))
 
     # Import files
@@ -149,6 +164,12 @@ if __name__ == "__main__":
         type=str,
         help='the language of the text'
         )
+    parser.add_argument(
+        '--pipeline_dir',
+        default="./pipelines/",
+        type=str,
+        help="location of pipelines"
+    )
     parser.add_argument(
         '--pipeline',
         default="UDPipe2",

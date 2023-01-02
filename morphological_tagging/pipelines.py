@@ -6,10 +6,10 @@ from collections import OrderedDict
 import numpy as np
 import torch
 import torch.nn as nn
+import torch.nn.functional as F
 from torch.nn.utils.rnn import pad_sequence
 from transformers import AutoConfig, AutoTokenizer, AutoModel
 
-from morphological_tagging.data.corpus import TreebankDataModule
 from morphological_tagging.data.lemma_script import apply_lemma_script
 from morphological_tagging.preprocessor import UDPipe2PreProcessor
 from morphological_tagging.modules import (
@@ -18,9 +18,9 @@ from morphological_tagging.modules import (
     ResidualMLP,
     ResidualRNN,
     MultiHeadSequenceAttention,
+    LayerAttention
 )
 from utils.errors import ConfigurationError
-
 
 class TorchUDPipe2(nn.Module):
     """A PyTorch implementation of UDPipe2.0.
@@ -307,6 +307,8 @@ class UDPipe2Pipeline(nn.Module):
 
     def load_vocabs_from_treebankdatamodule_checkpoint(self, fp: str):
 
+        from morphological_tagging.data.corpus import TreebankDataModule
+
         dm = TreebankDataModule.load(fp)
 
         self.id_to_lemma_script = deepcopy(dm.corpus.id_to_script)
@@ -503,6 +505,8 @@ class UDPipe2Pipeline(nn.Module):
 
         with open(file_path, "rb") as f:
             pipeline_state = pickle.load(f)
+
+        print("Loading UDPipe2.\nIf first time, will first download FastText and BERT.\nMight take a while.")
 
         pipeline = UDPipe2Pipeline()
         pipeline._hparams = pipeline_state["hparams"]
@@ -870,6 +874,8 @@ class DogTagPipeline(nn.Module):
 
     def load_vocabs_from_treebankdatamodule_checkpoint(self, fp: str):
 
+        from morphological_tagging.data.corpus import TreebankDataModule
+
         dm = TreebankDataModule.load(fp)
 
         self.id_to_lemma_script = deepcopy(dm.corpus.id_to_script)
@@ -1044,6 +1050,540 @@ class DogTagPipeline(nn.Module):
         pipeline.morph_tag_to_morph_cat = pipeline_state["dicts"][
             "morph_tag_to_morph_cat"
         ]
+        pipeline.pad_token = pipeline_state["dicts"]["pad_token"]
+        pipeline.unk_token = pipeline_state["dicts"]["unk_token"]
+
+        pipeline.performance_stats = pipeline_state["performance_stats"]
+
+        if tokenizer is not None:
+            pipeline.add_tokenizer(tokenizer)
+
+        return pipeline
+
+class TorchUDIFY(nn.Module):
+
+    def __init__(
+        self,
+        transformer_type: str,
+        transformer_name: str,
+        transformer_dropout: float,
+        c2w_kwargs: Dict[str, Any],
+        token_embeddings_dropout: float,
+        layer_attn_kwargs: Dict[str, Any],
+        rnn_kwargs: Dict[str, Any],
+        char_mask_p: float,
+        len_char_vocab: int,
+        idx_char_unk: int,
+        idx_char_pad: int,
+        idx_token_unk: int,
+        idx_token_pad: int,
+        n_lemma_scripts: int,
+        n_morph_tags: int,
+        n_morph_cats: int,
+        ignore_idx: int = -1,
+        **unused_kwargs,
+    ) -> None:
+
+        super().__init__()
+
+        # ======================================================================
+        # Model hyperparameters
+        # ======================================================================
+        # Module hyperparmeters ================================================
+        self.transformer_type = transformer_type
+        self.transformer_name = transformer_name
+        self.transformer_dropout = transformer_dropout
+        self.c2w_kwargs = c2w_kwargs
+        self.layer_attn_kwargs = layer_attn_kwargs
+        self.rnn_kwargs = rnn_kwargs
+
+        # Number of classes ====================================================
+        self.n_lemma_scripts = n_lemma_scripts
+        self.n_morph_tags = n_morph_tags
+        self.n_morph_cats = n_morph_cats
+
+        # Special tokens =======================================================
+        self.idx_char_unk = idx_char_unk
+        self.idx_char_pad = idx_char_pad
+        self.idx_token_unk = idx_token_unk
+        self.idx_token_pad = idx_token_pad
+
+        # Transformer & C2W Embeddings =========================================
+        self.config = AutoConfig.from_pretrained(transformer_name)
+
+        if transformer_dropout is not None:
+            dropouts = dict()
+            for k, v in self.config.__dict__.items():
+                if "dropout" in k and isinstance(v, float):
+                    dropouts[k] = transformer_dropout
+            self.config.__dict__.update(dropouts)
+
+        self.transformer = AutoModel.from_pretrained(
+            transformer_name, config=self.config
+        )
+        self.tokenizer = AutoTokenizer.from_pretrained(transformer_name, use_fast=True,)
+
+        self.char_mask = SequenceMask(
+            mask_p=char_mask_p, mask_idx=0, ign_idx=idx_char_pad,
+        )
+
+        self.c2w = Char2Word(
+            vocab_len=len_char_vocab, padding_idx=idx_char_pad, **c2w_kwargs,
+        )
+
+        # Word-level RNNs ======================================================
+
+        self.attend_last_L = layer_attn_kwargs["L"]
+
+        self.lemma_layer_attn = LayerAttention(**layer_attn_kwargs)
+
+        self.lemma_token_dropout = nn.Dropout(p=token_embeddings_dropout)
+
+        self.lemma_lstm = ResidualRNN(**rnn_kwargs)
+
+        self.morph_layer_attn = LayerAttention(**layer_attn_kwargs)
+
+        self.morph_token_dropout = nn.Dropout(p=token_embeddings_dropout)
+
+        self.morph_lstm = ResidualRNN(**rnn_kwargs)
+
+        # Lemma classification =================================================
+        self._lemma_in_features = rnn_kwargs["h_dim"]
+
+        self.lemma_clf = nn.Sequential(
+            ResidualMLP(
+                in_features=self._lemma_in_features,
+                out_features=self._lemma_in_features,
+            ),
+            nn.Linear(
+                in_features=self._lemma_in_features, out_features=self.n_lemma_scripts
+            ),
+        )
+
+        # Morph classification =================================================
+        self._morph_in_features = rnn_kwargs["h_dim"]
+
+        self.morph_clf_unf = nn.Sequential(
+            ResidualMLP(
+                in_features=self._morph_in_features,
+                out_features=self._morph_in_features,
+            ),
+            nn.Linear(
+                in_features=self._morph_in_features, out_features=self.n_morph_tags
+            ),
+        )
+
+        self.morph_clf_fac = nn.Sequential(
+            ResidualMLP(
+                in_features=self._morph_in_features,
+                out_features=self._morph_in_features,
+            ),
+            nn.Linear(
+                in_features=self._morph_in_features, out_features=self.n_morph_cats
+            ),
+        )
+
+        # ======================================================================
+        # Misc (e.g. logging)
+        # ======================================================================
+
+        self.ignore_idx = ignore_idx
+
+    @property
+    def device(self):
+        return next(self.parameters()).device
+
+    def _trainable_modules(self):
+        return [
+            self.transformer,
+            self.c2w,
+            self.lemma_layer_attn,
+            self.lemma_token_dropout,
+            self.lemma_lstm,
+            self.morph_layer_attn,
+            self.morph_token_dropout,
+            self.morph_lstm,
+            self.lemma_clf,
+            self.morph_clf_unf,
+            self.morph_clf_fac,
+        ]
+
+    def train(self):
+        for mod in self._trainable_modules():
+            mod.train()
+        self.training = True
+
+    def eval(self):
+        for mod in self._trainable_modules():
+            mod.eval()
+        self.training = False
+
+    def forward(
+        self,
+        char_lens: Union[list, torch.Tensor],
+        chars: torch.Tensor,
+        token_lens: Union[list, torch.Tensor],
+        tokens_raw: torch.Tensor,
+        skip_morph_reg: bool = False,
+    ) -> Tuple[torch.Tensor]:
+
+        # The lens tensors need to be on CPU in case of packing
+        if isinstance(char_lens, list):
+            char_lens = torch.tensor(char_lens, dtype=torch.long, device="cpu")
+
+        if isinstance(token_lens, list):
+            token_lens = torch.tensor(token_lens, dtype=torch.long, device="cpu")
+
+        batch_size = len(tokens_raw)
+
+        # ==============================================================================
+        # Contextual Token Encoding
+        # ==============================================================================
+
+        transformer_input = self.tokenizer(
+            tokens_raw,
+            return_tensors="pt",
+            padding=True,
+            truncation=True,
+            return_offsets_mapping=True,
+            is_split_into_words=True,
+        )
+
+        # Concatenate the hidden layer together and chop of the <BOS> and <EOS> tokens
+        context_embeddings = torch.stack(
+            self.transformer(
+                transformer_input["input_ids"].to(self.device),
+                transformer_input["attention_mask"].to(self.device),
+                output_hidden_states=True,
+            ).hidden_states,
+            dim=2,
+        )
+
+        # Deal with BPE and <BOS> and <EOS> tokens
+        # MASK and UNK tokens are also kept
+        token_map = [
+            torch.logical_and(
+                # Only keep the first BPE, i.e. those with non-zero span start
+                transformer_input["offset_mapping"][i, :, 0] == 0,
+                # Remove [CLS], [END], [PAD] tokens, i.e. those with zero span end
+                transformer_input["offset_mapping"][i, :, 1] != 0,
+            )
+            for i in range(batch_size)
+        ]
+
+        context_embeddings = [
+            context_embeddings[i, token_map[i], :] for i in range(batch_size)
+        ]
+
+        # Pad the tensors so they match the un-truncated input lengths
+        context_embeddings = torch.stack(
+            [
+                F.pad(
+                    cte,
+                    # Add nothing to the top of the first three dimensions
+                    # Pad the end of the 1st dimension (sequence length)
+                    (0, 0, 0, 0, 0, max(token_lens) - cte.size(0)),
+                    mode="constant",
+                    value=0,
+                )
+                for cte in context_embeddings
+            ],
+            dim=0,
+        )
+
+        # Throw an error if transformer output does not match the desired output length
+        assert context_embeddings.size(1) == max(
+            token_lens
+        ), f"Output of transformer, {context_embeddings.size(1)}, is not equal to maximum seq length, {max(token_lens)}"
+
+        # ======================================================================
+        # C2W embeddings
+        # ======================================================================
+        chars = self.char_mask(chars)
+
+        c2w_embeds_ = self.c2w(chars, char_lens)
+
+        seqs = []
+        beg = torch.tensor([0])
+        for l in token_lens:
+            seqs.append(c2w_embeds_[beg : beg + l])
+            beg += l
+
+        c2w_embeds = pad_sequence(
+            seqs, padding_value=self.idx_token_pad, batch_first=True
+        )
+
+        # ==============================================================================
+        # Lemma decoder
+        # ==============================================================================
+        h_lemma = self.lemma_layer_attn(
+            context_embeddings[:, :, -self.attend_last_L :, :]
+        )
+
+        h_lemma += c2w_embeds
+
+        h_lemma = self.lemma_token_dropout(h_lemma)
+
+        h_lemma = self.lemma_lstm(h_lemma)
+
+        lemma_logits = self.lemma_clf(h_lemma)
+
+        # ==============================================================================
+        # Morph tag decoder
+        # ==============================================================================
+        h_morph = self.morph_layer_attn(
+            context_embeddings[:, :, -self.attend_last_L :, :]
+        )
+
+        h_morph += c2w_embeds
+
+        h_morph = self.morph_token_dropout(h_morph)
+
+        h_morph = self.morph_lstm(h_morph)
+
+        morph_logits_unf = self.morph_clf_unf(h_morph)
+
+        if not skip_morph_reg:
+            morph_logits_fac = self.morph_clf_fac(h_morph)
+
+            return lemma_logits, morph_logits_unf, morph_logits_fac
+
+        return lemma_logits, morph_logits_unf
+
+class UDIFYPipeline(nn.Module):
+    """A wrapper for UDIFY that makes it a pipeline.
+    Text goes in, a list of lemmas, and morph_tags goes out.
+
+    Args:
+        tokenizer (Optional[Callable], optional): Any callable function that takes a list of
+        text and returns a list of lists of strings, representing tokens. Defaults to None.
+    """
+
+    def __init__(self, tokenizer: Optional[Callable] = None):
+        super().__init__()
+
+        if tokenizer is not None:
+            self.tokenizer = tokenizer
+
+        self.performance_stats = dict()
+
+    def load_tagger(self, check_point_path: str, **load):
+        """
+        Takes a UDIFY model as a PyTorch Lighting module,
+        and loads in only those aspects relevant for a PyTorch module to function within this pipeline.
+
+        Args:
+            check_point_path (str): _description_
+            load: kwargs fed into the `torch.load' method
+        """
+
+        with open(check_point_path, "rb") as f:
+            checkpoint = torch.load(f, **load)
+
+        self._hparams = checkpoint["hyper_parameters"]
+
+        self.tagger = TorchUDIFY(**checkpoint["hyper_parameters"])
+        self.tagger.load_state_dict(checkpoint["state_dict"], strict=False)
+
+        self.tagger.eval()
+        for param in self.tagger.parameters():
+            param.requires_grad = False
+
+    def load_vocabs_from_treebankdatamodule_checkpoint(self, fp: str):
+
+        from morphological_tagging.data.corpus import TreebankDataModule
+
+        dm = TreebankDataModule.load(fp)
+
+        self.id_to_lemma_script = deepcopy(dm.corpus.id_to_script)
+        self.id_to_morph_tag = deepcopy(
+            {v: k for k, v in dm.corpus.morph_tag_vocab.items()}
+        )
+        self.morph_tag_to_morph_cat = deepcopy(dm.corpus.morph_tag_cat_vocab)
+        self.char_vocab = deepcopy(dm.corpus.char_vocab)
+        self.token_vocab = deepcopy(dm.corpus.token_vocab)
+        self.pad_token = deepcopy(dm.corpus.pad_token)
+        self.unk_token = deepcopy(dm.corpus.unk_token)
+
+        del dm
+
+    @property
+    def device(self):
+        return next(self.parameters()).device
+
+    def text_to_input(
+        self, texts: Union[List[str], List[List[str]]], pre_tokenized: bool = False
+    ):
+        if pre_tokenized:
+            tokens_raw = texts
+        else:
+            tokens_raw = self.tokenizer(texts)
+
+        token_lens = [len(seq) for seq in tokens_raw]
+
+        chars = [
+            torch.tensor(
+                self.char_vocab.lookup_indices([char for char in token]),
+                dtype=torch.long,
+                device=self.device,
+            )
+            for token_seq in tokens_raw
+            for token in token_seq
+        ]
+        char_lens = [char_seq.size(0) for char_seq in chars]
+        chars = pad_sequence(
+            [char_seq for char_seq in chars],
+            padding_value=self.char_vocab[self.pad_token],
+            batch_first=False,
+        )
+
+        return char_lens, chars, token_lens, tokens_raw
+
+    @torch.no_grad()
+    def predict(self, char_lens, chars, token_lens, tokens_raw):
+
+        lemma_logits, morph_logits = self.tagger.forward(
+            char_lens,
+            chars.to(self.device),
+            token_lens,
+            tokens_raw,
+            skip_morph_reg = True,
+        )
+
+        lemma_preds = torch.argmax(lemma_logits, dim=-1)
+        morph_preds = torch.round(torch.sigmoid(morph_logits))
+
+        return lemma_preds, morph_preds
+
+    def preds_to_text(self, tokens_raw, lemma_preds, morph_preds):
+
+        lemma_preds_ = lemma_preds.detach().cpu().numpy()
+        morph_preds_ = morph_preds.detach().cpu().numpy()
+
+        lemma_scripts = [
+            [self.id_to_lemma_script[ls] for _, ls in zip(tok_seq, ls_seq)]
+            for tok_seq, ls_seq in zip(tokens_raw, lemma_preds_)
+        ]
+
+        lemmas = [
+            [
+                apply_lemma_script(token, ls, verbose=False)
+                for token, ls in zip(tok_seq, ls_seq)
+            ]
+            for tok_seq, ls_seq in zip(tokens_raw, lemma_scripts)
+        ]
+
+        morph_tags = [
+            [
+                set(self.id_to_morph_tag[mt] for mt in np.where(mts)[0])
+                for _, mts in zip(tok_seq, mt_seq)
+            ]
+            for tok_seq, mt_seq in zip(tokens_raw, morph_preds_)
+        ]
+
+        morph_cats = [
+            [
+                set(self.morph_tag_to_morph_cat[mt.lower()] for mt in list(mts))
+                for _, mts in zip(tok_seq, mt_seq)
+            ]
+            for tok_seq, mt_seq in zip(tokens_raw, morph_tags)
+        ]
+
+        return lemmas, lemma_scripts, morph_tags, morph_cats
+
+    def forward(
+        self,
+        inp: Union[List[str], List[List[str]], Tuple[torch.tensor]],
+        is_pre_tokenized: bool = False,
+        is_batch_input: bool = False,
+        transpose: bool = False,
+    ):
+        """
+
+        Args:
+            inp (_type_): the input
+            is_pre_tokenized (bool, optional): avoids passing the tokenizer over the input. Expects input to be List[List[str]]. Defaults to False.
+            is_batch_input (bool, optional): treats input as batch for TreebankDataModule. Expects input to be iterable containing `char_lens', `chars', `token_lens', `tokens_raw', `tokens'. Defaults to False.
+            transpose (bool, optional): whether or not to transpose the output. Defaults to False.
+
+        Returns:
+            Union[Tuple[List[List]], List[List[Tuple]]]: returns either a tuple of lists [4, N_sents, N_tokens] which are the lemmas, lemma scripts, morph_tag_sets and morp_cat_sets, with each element in the list corresponding to a token or a list of tuples, or its transpose [N_sents, N_tokens, 4]
+        """
+
+        if not is_batch_input:
+            (char_lens, chars, token_lens, tokens_raw) = self.text_to_input(
+                inp, pre_tokenized=is_pre_tokenized
+            )
+        else:
+            (char_lens, chars, token_lens, tokens_raw) = inp
+
+        lemma_preds, morph_preds = self.predict(
+            char_lens, chars, token_lens, tokens_raw
+        )
+
+        lemmas, lemma_scripts, morph_tags, morph_cats = self.preds_to_text(
+            tokens_raw, lemma_preds, morph_preds
+        )
+
+        if transpose:
+            return [
+                list(zip(*batch_output))
+                for batch_output in zip(lemmas, lemma_scripts, morph_tags, morph_cats)
+            ]
+        else:
+            return lemmas, lemma_scripts, morph_tags, morph_cats
+
+    def add_tokenizer(self, tokenizer: callable):
+        self.tokenizer = tokenizer
+
+    def save(self, file_path):
+        """Pickles a minimal subset of parameters to be loaded in later.
+
+        Args:
+            file_path (str): location of the save file.
+        """
+
+        with open(file_path, "wb") as f:
+            pickle.dump(
+                {
+                    "state_dict": self.state_dict(),
+                    "hparams": self._hparams,
+                    "dicts": {
+                        "id_to_lemma_script": self.id_to_lemma_script,
+                        "id_to_morph_tag": self.id_to_morph_tag,
+                        "morph_tag_to_morph_cat": self.morph_tag_to_morph_cat,
+                        "char_vocab": self.char_vocab,
+                        "token_vocab": self.token_vocab,
+                        "pad_token": self.pad_token,
+                        "unk_token": self.unk_token,
+                    },
+                    "performance_stats": self.performance_stats,
+                },
+                f,
+            )
+
+    @classmethod
+    def load(cls, file_path, tokenizer: Optional[callable] = None):
+
+        with open(file_path, "rb") as f:
+            pipeline_state = pickle.load(f)
+
+        pipeline = UDIFYPipeline()
+        pipeline._hparams = pipeline_state["hparams"]
+        pipeline.tagger = TorchUDIFY(**pipeline._hparams)
+
+        _ = pipeline.load_state_dict(pipeline_state["state_dict"], strict=False)
+        pipeline.tagger.eval()
+        for param in pipeline.tagger.parameters():
+            param.requires_grad = False
+
+        pipeline.id_to_lemma_script = pipeline_state["dicts"]["id_to_lemma_script"]
+        pipeline.id_to_morph_tag = pipeline_state["dicts"]["id_to_morph_tag"]
+        pipeline.morph_tag_to_morph_cat = pipeline_state["dicts"][
+            "morph_tag_to_morph_cat"
+        ]
+        pipeline.char_vocab = pipeline_state["dicts"]["char_vocab"]
+        pipeline.token_vocab = pipeline_state["dicts"]["token_vocab"]
         pipeline.pad_token = pipeline_state["dicts"]["pad_token"]
         pipeline.unk_token = pipeline_state["dicts"]["unk_token"]
 
