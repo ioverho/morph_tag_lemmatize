@@ -25,8 +25,7 @@
     />
 </a>
 <a href="https://github.com/ioverho/morph_tag_lemmatize/blob/main/misc/msc_thesis_chp_1.pdf">
-    <img src="https://img.shields.io/badge/thesis-%23000000.svg?&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEiIHdpZHRoPSI2MDAiIGhlaWdodD0iNjAwIj48cGF0aCBkPSJNMTI5IDExMWMtNTUgNC05MyA2Ni05MyA3OEwwIDM5OGMtMiA3MCAzNiA5MiA2OSA5MWgxYzc5IDAgODctNTcgMTMwLTEyOGgyMDFjNDMgNzEgNTAgMTI4IDEyOSAxMjhoMWMzMyAxIDcxLTIxIDY5LTkxbC0zNi0yMDljMC0xMi00MC03OC05OC03OGgtMTBjLTYzIDAtOTIgMzUtOTIgNDJIMjM2YzAtNy0yOS00Mi05Mi00MmgtMTV6IiBmaWxsPSIjZmZmIi8+PC9zdmc+
-&style=for-the-badge&logoColor=#FFBE00"
+    <img src="https://img.shields.io/badge/thesis-%23000000.svg?&logo=overleaf&style=for-the-badge&logoColor=#47A141"
     alt="Relevant thesis chapter."
     style="float: center;"
     />
